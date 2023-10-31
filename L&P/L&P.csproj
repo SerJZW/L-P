@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <RootNamespace>L_P</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Source\Image\background.jpg" />
+    <None Remove="Source\Image\backgroundsec.jpg" />
+    <None Remove="Source\Image\Logo.png" />
+    <None Remove="Source\UI_Icon\AboutApl.png" />
+    <None Remove="Source\UI_Icon\Back.png" />
+    <None Remove="Source\UI_Icon\Confirm.png" />
+    <None Remove="Source\UI_Icon\Fallback.png" />
+    <None Remove="Source\UI_Icon\Logout.png" />
+    <None Remove="Source\UI_Icon\Next.png" />
+    <None Remove="Source\UI_Icon\Play.png" />
+    <None Remove="Source\UI_Icon\Setting.png" />
+    <None Remove="Source\UI_Icon\User.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Source\Image\background.jpg" />
+    <Resource Include="Source\Image\backgroundsec.jpg" />
+    <Resource Include="Source\UI_Icon\AboutApl.png" />
+    <Resource Include="Source\UI_Icon\Back.png" />
+    <Resource Include="Source\UI_Icon\Confirm.png" />
+    <Resource Include="Source\UI_Icon\Fallback.png" />
+    <Resource Include="Source\UI_Icon\Logout.png" />
+	<Resource Include="Source\Fonts\DaMiOne-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Model\Event\" />
+    <Folder Include="ViewModel\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Source\Image\Logo.png" />
+    <Resource Include="Source\UI_Icon\Next.png" />
+    <Resource Include="Source\UI_Icon\Play.png" />
+    <Resource Include="Source\UI_Icon\Setting.png" />
+    <Resource Include="Source\UI_Icon\User.png" />
+  </ItemGroup>
+
+</Project>

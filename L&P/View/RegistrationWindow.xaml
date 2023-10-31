@@ -1,0 +1,42 @@
+﻿<Window x:Class="L_P.View.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:L_P.View"
+        mc:Ignorable="d"
+        Title="LaP" Icon="/Source/Image/Logo.png"  
+        Height="1080px" Width="1920px" 
+        MinWidth="1280px" MinHeight="900px">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Column="1">
+            <TextBlock Text="Авторизация" Style="{StaticResource TextBlockReg}"/>
+        </DockPanel>
+        <DockPanel Grid.Column="1" Grid.Row="1">
+            <Border Style="{StaticResource BorderRegStyle}">
+                <StackPanel>
+                    <TextBox Style="{StaticResource TextBoxStyleReg}" Margin="0,100,0,0"/>
+                    <TextBox Style="{StaticResource TextBoxStyleReg}" Margin="0,50,0,0"/>
+                    <Button Style="{StaticResource ButtonRegStyle}" 
+                            Content="Регистрация" 
+                            Margin="250,50,0,0"/>
+                    <Button Style="{StaticResource ButtonRegStyle}" 
+                            HorizontalAlignment="Right" 
+                            Margin="0,-80,250,0" 
+                            Content="Войти"/>
+                </StackPanel>
+            </Border>
+        </DockPanel>
+        <Frame Name="RegFrame" Background="White" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
