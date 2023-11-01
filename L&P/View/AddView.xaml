@@ -36,7 +36,8 @@
                             Margin="0,35,0,15"
                             VerticalAlignment="Bottom"
                             Content="Музыка"                          
-                            Style="{StaticResource ButtonUserStyle}">
+                            Style="{StaticResource ButtonUserStyle}"
+                            Command="{Binding SearchMusicCommand}">
                         </Button>
                     </StackPanel>
                 </Border>
@@ -52,7 +53,8 @@
                     Margin="0,35,0,15"
                     VerticalAlignment="Bottom"
                     Content="Подкаст"
-                    Style="{StaticResource ButtonUserStyle}">
+                    Style="{StaticResource ButtonUserStyle}"
+                    Command="{Binding SearchPodcastCommand}">
                         </Button>
                     </StackPanel>
                 </Border>
@@ -68,7 +70,8 @@
                     Margin="0,35,0,15"
                     VerticalAlignment="Bottom"
                     FontSize="17pt"
-                    Style="{StaticResource ButtonUserStyle}">
+                    Style="{StaticResource ButtonUserStyle}"
+                    Command="{Binding SearchAccordsCommand}">
                             <TextBlock TextWrapping="Wrap" Text="Аккорды" />
                         </Button>
                     </StackPanel>

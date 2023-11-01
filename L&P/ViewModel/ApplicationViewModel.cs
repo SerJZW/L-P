@@ -1,13 +1,28 @@
-﻿using L_P.Model.Event;
+﻿using L_P.Model;
+using L_P.Model.Event;
 using L_P.View;
+using Microsoft.Win32;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.IO;
+using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 
 namespace L_P
 {
     public class ApplicationViewModel : Notify
     {
+        public ObservableCollection<Music>? Music { get; set; }
+        public ObservableCollection<Accords>? Accords { get; set; }
+        public ObservableCollection<Podcast>? Podcasts { get; set; }
+       
+        public ApplicationViewModel()
+        {
+            Music = new ObservableCollection<Music>()
+            {
+                new Music{SongName = "Кукла Колдуна", SongerName = "КиШ", Album = "Акустический альбом", Date = 1998, Duration = 3.23}
+            };
+        }
         private ContentControl? myContentControl;
         public ContentControl MyContentControl
         {
@@ -63,6 +78,70 @@ namespace L_P
                     System.Diagnostics.Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
                 }));
             }
-        }        
+        }
+        private OpenFileDialog openDialog = new OpenFileDialog();
+        public RelayCommand SearchMusicCommand
+        {
+            get
+            {
+                return (new RelayCommand(obj =>
+                {
+                    openDialog.Filter = "Музыкальные файлы (.mp3) | *.mp3";
+                    openDialog.Title = "Выберите музыкальные файлы....";
+                    bool? succses = openDialog.ShowDialog();
+                    openDialog.Multiselect = true;
+                    if (succses == true)
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ни один элемент не был добавлен");
+                    }
+                }));
+            }
+        }
+        public RelayCommand SearchPodcastCommand
+        {
+            get
+            {
+                return (new RelayCommand(obj =>
+                {
+                    openDialog.Filter = "Подкаст файлы (.mp3) | *.mp3";
+                    openDialog.Title = "Выберите подкаст файлы....";
+                    bool? succses = openDialog.ShowDialog();
+                    openDialog.Multiselect = true;
+                    if (succses == true)
+                    {
+                      
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ни один элемент не был добавлен");
+                    }
+                }));
+            }
+        }
+        public RelayCommand SearchAccordsCommand
+        {
+            get
+            {
+                return (new RelayCommand(obj =>
+                {
+                    openDialog.Filter = "Аккорд файлы (.midi) | *.midi";
+                    openDialog.Title = "Выберите аккорд файлы....";
+                    bool? succses = openDialog.ShowDialog();
+                    openDialog.Multiselect = true;
+                    if (succses == true)
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ни один элемент не был добавлен");
+                    }
+                }));
+            }
+        }
     }
 }

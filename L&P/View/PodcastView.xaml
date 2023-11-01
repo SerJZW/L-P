@@ -12,17 +12,20 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="1" Orientation="Vertical">
-            <Label Content="Подкасты" Style="{StaticResource LabelStyle}"/>
-            <ListView Background="AliceBlue" Margin="108,0,100,0">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn Header="Song"/>
-                        <GridViewColumn/>
-                        <GridViewColumn/>
-                    </GridView>
-                </ListView.View>
-            </ListView>
-        </StackPanel>
+        <Viewbox Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <StackPanel Grid.Row="1" Orientation="Vertical">
+                <Label Content="Подкасты" Style="{StaticResource LabelStyle}"/>
+                <ListView Style="{StaticResource ListStyle}" Background="AliceBlue" Margin="108,0,100,0">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Название" Width="250" HeaderContainerStyle="{StaticResource GridViewColumnStyle}"/>
+                            <GridViewColumn Header="Автор" Width="250" HeaderContainerStyle="{StaticResource GridViewColumnStyle2}"/>
+                            <GridViewColumn Header="Год" Width="250" HeaderContainerStyle="{StaticResource GridViewColumnStyle2}"/>
+                            <GridViewColumn Header="Длительность" Width="250" HeaderContainerStyle="{StaticResource GridViewColumnStyle3}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
+        </Viewbox>
     </Grid>
 </UserControl>

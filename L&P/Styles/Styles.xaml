@@ -275,7 +275,43 @@
         <Setter Property="Height" Value="30"/>
         <Setter Property="Background" Value="Transparent"/>
     </Style>
-    <Style x:Key="ControlAnim" TargetType="UserControl">
+    <Style x:Key="ListStyle" TargetType="ListView">
+        <Setter Property="FontFamily" Value="l_p;\source\fonts\damione-regular.ttf#DaMiOne-Regular"/>
+        <Setter Property="FontStyle" Value="Italic"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+
+    </Style>
+    <Style x:Key="GridViewColumnStyle" TargetType="GridViewColumnHeader">
+        <Setter Property="Background" Value="White"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="10,0,0,10"/>
+                <Setter Property="BorderBrush" Value="Black"/>
+                <Setter Property="BorderThickness" Value="2"/>
+            </Style>
+        </Style.Resources>
         
+    </Style>
+    <Style x:Key="GridViewColumnStyle2" TargetType="GridViewColumnHeader">
+        <Setter Property="Background" Value="White"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="0,0,0,0"/>
+                <Setter Property="BorderBrush" Value="Black"/>
+                <Setter Property="BorderThickness" Value="2"/>
+            </Style>
+        </Style.Resources>
+    </Style>
+    <Style x:Key="GridViewColumnStyle3" TargetType="GridViewColumnHeader">
+        <Setter Property="Background" Value="White"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="0,10,10,0"/>
+                <Setter Property="BorderBrush" Value="Black"/>
+                <Setter Property="BorderThickness" Value="2"/>
+            </Style>
+        </Style.Resources>
     </Style>
 </ResourceDictionary>
