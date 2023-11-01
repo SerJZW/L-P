@@ -13,12 +13,14 @@
     <None Remove="Source\Image\backgroundsec.jpg" />
     <None Remove="Source\Image\Logo.png" />
     <None Remove="Source\UI_Icon\AboutApl.png" />
+    <None Remove="Source\UI_Icon\Accords.png" />
     <None Remove="Source\UI_Icon\Back.png" />
     <None Remove="Source\UI_Icon\Confirm.png" />
     <None Remove="Source\UI_Icon\Fallback.png" />
     <None Remove="Source\UI_Icon\Logout.png" />
     <None Remove="Source\UI_Icon\Next.png" />
     <None Remove="Source\UI_Icon\Play.png" />
+    <None Remove="Source\UI_Icon\Podcast.png" />
     <None Remove="Source\UI_Icon\Setting.png" />
     <None Remove="Source\UI_Icon\User.png" />
   </ItemGroup>
@@ -27,6 +29,7 @@
     <Resource Include="Source\Image\background.jpg" />
     <Resource Include="Source\Image\backgroundsec.jpg" />
     <Resource Include="Source\UI_Icon\AboutApl.png" />
+    <Resource Include="Source\UI_Icon\Accords.png" />
     <Resource Include="Source\UI_Icon\Back.png" />
     <Resource Include="Source\UI_Icon\Confirm.png" />
     <Resource Include="Source\UI_Icon\Fallback.png" />
@@ -42,6 +45,7 @@
     <Resource Include="Source\Image\Logo.png" />
     <Resource Include="Source\UI_Icon\Next.png" />
     <Resource Include="Source\UI_Icon\Play.png" />
+    <Resource Include="Source\UI_Icon\Podcast.png" />
     <Resource Include="Source\UI_Icon\Setting.png" />
     <Resource Include="Source\UI_Icon\User.png" />
   </ItemGroup>

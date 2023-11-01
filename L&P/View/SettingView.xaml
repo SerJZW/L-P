@@ -67,7 +67,8 @@
                         <Button Style="{StaticResource ButtonMenuStyle}"
                             Margin="0,0,10,0"
                             HorizontalAlignment="Right"
-                            Content="Написать нам"/>
+                            Content="Написать нам"
+                            Command="{Binding ContactCommand}"    />
                     </DockPanel>
                 </Border>
             </StackPanel>

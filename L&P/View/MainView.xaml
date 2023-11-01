@@ -12,7 +12,7 @@
                 <Border Margin="70,50,0,50" Style="{StaticResource BorderMainStyle}">
                     <TextBlock Style="{StaticResource TextBlockMainStyle}"/>
                 </Border>
-                <Border Margin="70,50,50,50" VerticalAlignment="Center"  
+                <Border Margin="70,50,50,50" VerticalAlignment="Bottom"  
                             Style="{StaticResource BorderMainStyle2}">
                     <TextBlock Style="{StaticResource TextBlockMainStyle2}"/>
                 </Border>

@@ -14,7 +14,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="6*"/>
-            <RowDefinition Height="0.6*"/>
+            <RowDefinition Height="0.8*"/>
         </Grid.RowDefinitions>
         <Viewbox Grid.Row="0">
             <DockPanel Name="Header" Grid.Row="0">
@@ -80,7 +80,7 @@
                     BorderThickness="1" 
                     CornerRadius="30"
                     DockPanel.Dock="Bottom"
-                    Margin="10,0,10,0">
+                    Margin="10,0,10,10">
                     <DockPanel>
                         <Button Name="Back" Style="{StaticResource PlayerButtons}">
                             <Image Source="/Source/UI_Icon/Back.png"/>

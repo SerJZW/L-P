@@ -52,7 +52,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="Purple"/>
+                <Setter Property="Background" Value="#3A2AEB"/>
                 <Setter Property="Button.Effect">
                     <Setter.Value>
                         <DropShadowEffect Color="Black" ShadowDepth="5"/>
@@ -97,7 +97,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="MediumVioletRed"/>
+                <Setter Property="Background" Value="#3A2AEB"/>
                 <Setter Property="Button.Effect">
                     <Setter.Value>
                         <DropShadowEffect Color="Black" ShadowDepth="5"/>
@@ -140,7 +140,7 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Height" Value="770"/>
         <Setter Property="Width" Value="570"/>
-        <Setter Property="Background" Value="LightSlateGray"/>
+        
     </Style>
     <Style x:Key="BorderMainStyle2" TargetType="Border">
         <Setter Property="HorizontalAlignment" Value="Right"/>
@@ -155,7 +155,7 @@
         <Setter Property="HorizontalAlignment" Value="Right"/>
         <Setter Property="Height" Value="350"/>
         <Setter Property="Width" Value="1000"/>
-        <Setter Property="Background" Value="LightSlateGray"/>
+    
     </Style>
     <Style x:Key="LabelStyle" TargetType="Label">
         <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -185,7 +185,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="MediumVioletRed"/>
+                <Setter Property="Background" Value="#3A2AEB"/>
                 <Setter Property="Button.Effect">
                     <Setter.Value>
                         <DropShadowEffect Color="Black" Direction="320" ShadowDepth="5"/>
@@ -274,5 +274,8 @@
     <Style x:Key="SliderStyle" TargetType="Slider">
         <Setter Property="Height" Value="30"/>
         <Setter Property="Background" Value="Transparent"/>
+    </Style>
+    <Style x:Key="ControlAnim" TargetType="UserControl">
+        
     </Style>
 </ResourceDictionary>

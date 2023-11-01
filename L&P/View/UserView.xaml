@@ -5,16 +5,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:L_P.View"
              mc:Ignorable="d" 
-             Height="1080px" Width="1920px" 
+             d:Height="1080px" d:Width="1920px" 
              MinWidth="1280px" MinHeight="900px">
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
-        <Viewbox Grid.Row="0" Margin="0,30,0,0">
+        <Viewbox Grid.Row="0" Margin="30,30,30,0">
             <Border BorderThickness="3,3,3,3"
-                    BorderBrush="Black">
+                    BorderBrush="Black"
+                    CornerRadius="30">
                 <DockPanel>
                     <TextBlock Width="130"
                     Height="130"
@@ -22,7 +23,7 @@
                     Margin="50,0,0,0">
                 <Image Source="/Source/UI_Icon/User.png"/>
                     </TextBlock>
-                    <TextBlock Text="Данные о пользователе"
+                    <TextBlock Text="Данные о пользователе"          
                    FontFamily="l_p;\source\fonts\damione-regular.ttf#DaMiOne-Regular"
                    FontStyle ="Italic"   
                    TextWrapping="Wrap"
@@ -123,6 +124,7 @@
                     Margin="0,35,0,15"
                     VerticalAlignment="Bottom"
                     FontSize="25pt"
+                    Command="{Binding ExitCommand}"
                     Style="{StaticResource ButtonUserStyle}">
                             <TextBlock Text="Выйти из аккаунта" TextWrapping="Wrap"/>
                         </Button>

@@ -1,15 +1,14 @@
 ﻿using L_P.Model.Event;
 using L_P.View;
+using System.Diagnostics;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace L_P
 {
     public class ApplicationViewModel : Notify
     {
         private ContentControl? myContentControl;
-        /// <summary>
-        /// Content controls for loading content
-        /// </summary>
         public ContentControl MyContentControl
         {
             get
@@ -43,5 +42,27 @@ namespace L_P
                 }));
             }
         }
+        public RelayCommand ExitCommand
+        {
+            get
+            {
+                return new RelayCommand(obj =>
+                {
+                    System.Windows.Application.Current.Shutdown();
+                });
+            }
+        }
+
+        public RelayCommand ContactCommand
+        {
+            get
+            {
+                return (new RelayCommand(obj =>
+                {
+                    string url = "https://sun6-22.userapi.com/s/v1/if2/N8gfbNFwrAPxOwsrvN8RQ-8IoxiMX_jy8N7zLUf4itGzIzR_6yXNwcfnF7TVALYa_GSL6-99tcshKtpidnDzB9zL.jpg?size=1686x1686&quality=96&crop=203,152,1686,1686&ava=1";
+                    System.Diagnostics.Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
+                }));
+            }
+        }        
     }
 }

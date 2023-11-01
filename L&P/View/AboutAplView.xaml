@@ -16,9 +16,9 @@
         <Label Content="О приложении" FontSize="40pt" Margin="30,0,0,0"/>
         </Border>
            </DockPanel>
-            <DockPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="30,20,30,0">
+            <DockPanel Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,20,30,0">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
-                <TextBlock TextWrapping="Wrap" FontSize="30pt">
+                <TextBlock TextWrapping="Wrap" FontSize="16pt"  Width="1000">
                     Приложение LaP - это универсальное музыкальное приложение, специально разработанное для музыкантов и всех, кто ценит музыку и подкасты. LaP объединяет в себе музыкальный плеер и аккорды для помощи музыкантам в игре на инструментах и исполнении песен, а также предоставляет доступ к разнообразным подкастам.
                     <LineBreak/>
                     Основные функции приложения:
