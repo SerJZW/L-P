@@ -9,14 +9,13 @@
              MinWidth="1280px" MinHeight="900px">
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="1.2*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
-        <Viewbox Grid.Row="0">
-            <Border BorderThickness="0,0,0,3"
+        <Viewbox Grid.Row="0" Margin="0,30,0,0">
+            <Border BorderThickness="3,3,3,3"
                     BorderBrush="Black">
                 <DockPanel>
-
                     <TextBlock Width="130"
                     Height="130"
                     HorizontalAlignment="Left"
@@ -47,19 +46,13 @@
                     HorizontalAlignment="Right"
                     Margin="270,50,150,30"
                     Style="{StaticResource ButtonUserStyle}"/>
-                    <Button 
-                Width="70px"
-                Height="70px"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Right"
-                Background="Transparent"
-                BorderBrush="Transparent">
-                        <Image Source="/Source/UI_Icon/Fallback.png"/>
-                    </Button>
                 </DockPanel>
             </Border>
         </Viewbox>
-        <Viewbox Grid.Row="1">
+        <Viewbox Grid.Row="1" 
+                 VerticalAlignment="Top"
+                 HorizontalAlignment="Center"
+                 Margin="0,70,0,0">
             <DockPanel Grid.Row="1">
                 <Border
                 Margin="200,0,0,0"
@@ -69,10 +62,13 @@
                     Style="{StaticResource UIStyle}"
                     Source="/Source/UI_Icon/Setting.png"/>
                         <Button
-                    Margin="0,35,0,15"
-                    VerticalAlignment="Bottom"
-                    Content="Настройки"
-                    Style="{StaticResource ButtonUserStyle}">
+                            Margin="0,35,0,15"
+                            VerticalAlignment="Bottom"
+                            Content="Настройки"
+                            Name="SettingView"
+                            Command="{Binding SetObject}"
+                            CommandParameter="SettingView"
+                            Style="{StaticResource ButtonUserStyle}">
                         </Button>
                     </StackPanel>
                 </Border>
@@ -88,7 +84,10 @@
                     Margin="0,35,0,15"
                     VerticalAlignment="Bottom"
                     Content="О приложении"
-                    Style="{StaticResource ButtonUserStyle}">
+                    Style="{StaticResource ButtonUserStyle}"
+                            Command="{Binding SetObject}"
+                            Name="AboutAplView"
+                            CommandParameter="AboutAplView">
                         </Button>
                     </StackPanel>
                 </Border>
@@ -103,7 +102,10 @@
                         <Button                    
                     Margin="0,35,0,15"
                     VerticalAlignment="Bottom"
-                    FontSize="17pt"                    
+                    FontSize="17pt"
+                            Name="UserAgreementView"
+                            Command="{Binding SetObject}"
+                            CommandParameter="UserAgreementView"
                     Style="{StaticResource ButtonUserStyle}">
                             <TextBlock TextWrapping="Wrap" Text="Пользовательское соглашение" />
                         </Button>

@@ -5,10 +5,11 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using L_P;
 
-namespace L_P.Model
+namespace L_P
 {
-    public class Notice : INotifyPropertyChanged
+    public class Notify : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")

@@ -4,11 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:L_P.View"
+        xmlns:UserControls ="clr-namespace:L_P.View"
         mc:Ignorable="d"      
         Title="LaP" Icon="/Source/Image/Logo.png"  
         Height="1080px" Width="1920px" 
         MinWidth="1280px" MinHeight="900px">
-   
+
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -29,22 +30,44 @@
                        FontStyle="Italic"
                        Height="120px"
                        Width="130"/>
-                        <Button Content="Главная" Style="{StaticResource ButtonMenuStyle}"/>
-                        <Button Content="Музыка" Style="{StaticResource ButtonMenuStyle}" />
-                        <Button Content="Подкасты" Style="{StaticResource ButtonMenuStyle}"/>
-                        <Button Content="Аккорды" Style="{StaticResource ButtonMenuStyle}"/>
+                        <Button Content="Главная" 
+                                Name="MainView" 
+                                Style="{StaticResource ButtonMenuStyle}"
+                                Command="{Binding SetObject}"
+                                CommandParameter="MainView"/>
+                        <Button Content="Музыка" 
+                                Name="MusicView" 
+                                Style="{StaticResource ButtonMenuStyle}" 
+                                Command="{Binding SetObject}"
+                                CommandParameter="MusicView"/>
+                        <Button Content="Подкасты"
+                                Name="PodcastView"
+                                Style="{StaticResource ButtonMenuStyle}"
+                                Command="{Binding SetObject}"
+                                CommandParameter="PodcastView"/>
+                        <Button Content="Аккорды"
+                                Name="AccordsView"
+                                Style="{StaticResource ButtonMenuStyle}"
+                                Command="{Binding SetObject}"
+                                CommandParameter="AccordsView"/>
                         <Button Width="200px"
-                    FontSize="16pt"            
-                    Height="70px"
-                    Content="+ Добавить..."
-                    Background="Gray"  
-                    Margin="150,0,60,0"            
-                    Style="{StaticResource ButtonMenuStyle}"/>
+                                Name="AddView"
+                                FontSize="16pt"            
+                                Height="70px"
+                                Content="+ Добавить..."
+                                Background="Gray"  
+                                Margin="150,0,60,0"            
+                                Style="{StaticResource ButtonMenuStyle}"
+                                Command="{Binding SetObject}"
+                                CommandParameter="AddView"/>
                         <Button Width="70"
-                    Height="70"
-                    HorizontalAlignment="Right"
-                    Margin="0,0,50,0"
-                    Style="{StaticResource UserButton}">
+                                Height="70"
+                                HorizontalAlignment="Right"
+                                Margin="0,0,50,0"
+                                Style="{StaticResource UserButton}"
+                                Name="UserView"
+                                Command="{Binding SetObject}"
+                                CommandParameter="UserView">
                             <Image Source="/Source/UI_Icon/User.png"/>
                         </Button>
                     </DockPanel>
@@ -74,16 +97,8 @@
                 </Border>
             </DockPanel>
         </Viewbox>
-        <Viewbox Grid.Row="1">
-            <DockPanel Grid.Row="1">
-                <Border Margin="70,50,0,50" Style="{StaticResource BorderMainStyle}">
-                <TextBlock Style="{StaticResource TextBlockMainStyle}"/>
-            </Border>
-                <Border Margin="70,50,50,50" VerticalAlignment="Center"  Style="{StaticResource BorderMainStyle2}">
-                    <TextBlock Style="{StaticResource TextBlockMainStyle2}"/>
-                </Border>
-
-            </DockPanel>
-        </Viewbox>
+        <ContentControl Grid.Row="1" Name="MyContentControl" Content="{Binding MyContentControl, UpdateSourceTrigger=PropertyChanged}">
+          
+        </ContentControl>
     </Grid>
 </Window>

@@ -21,15 +21,6 @@
                        Margin="30,30,30,30"
                        FontSize="50pt"
                        Text="Настройки"/>
-                    <Button 
-                Width="70px"
-                Height="70px"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Right"
-                Background="Transparent"
-                BorderBrush="Transparent">
-                        <Image Source="/Source/UI_Icon/Fallback.png"/>
-                    </Button>
                 </DockPanel>
             </Border>
         </Grid>
