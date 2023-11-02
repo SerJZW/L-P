@@ -14,7 +14,7 @@
         <Viewbox Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
             <StackPanel Grid.Row="1" Orientation="Vertical">
                 <Label Content="Музыка" Style="{StaticResource LabelStyle}"/>
-                <ListView  ItemsSource="{Binding Music}" Style="{StaticResource ListStyle}" Margin="108,0,100,0">
+                <ListView  ItemsSource="{Binding Music}" SelectedItem="{Binding SelectedAudio}" Style="{StaticResource ListStyle}" Margin="108,0,100,0">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Композиция" 
@@ -36,7 +36,7 @@
                             <GridViewColumn Header="Продолжительность"
                                             Width="250" 
                                             HeaderContainerStyle="{StaticResource GridViewColumnStyle3}"
-                                            DisplayMemberBinding="{Binding Path = Duration}"/>
+                                            DisplayMemberBinding="{Binding Path = Durations, StringFormat={}{0:mm\\:ss}}"/>
                         </GridView>
                     </ListView.View>
                 </ListView>

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace L_P.Model
 {
@@ -7,7 +8,7 @@ namespace L_P.Model
         private string? podcastName;
         private string? podcasterName;
         private int date;
-        private double duration;
+        private TimeSpan duration;
         private FileStream? podcastFile;
 
         public string? PodcastName
@@ -25,7 +26,7 @@ namespace L_P.Model
             get { return date; }
             set { date = value; OnPropertyChanged("Date"); }
         }
-        public double Duration
+        public TimeSpan Duration
         {
             get { return duration; }
             set { duration = value; OnPropertyChanged("Duration"); }

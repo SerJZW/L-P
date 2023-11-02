@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace L_P.Model
 {
@@ -8,8 +9,8 @@ namespace L_P.Model
         private string? songerName;
         private string? album;
         private int date;
-        private double duration;
-        //private FileStream? musicFile;
+        private TimeSpan durations;
+        private FileStream? musicFile;
 
         public string? SongName
         {
@@ -31,15 +32,15 @@ namespace L_P.Model
             get { return date; }
             set { date = value; OnPropertyChanged("Date"); }
         }
-        public double Duration
+        public TimeSpan Durations
         {
-            get { return duration; }
-            set { duration = value; OnPropertyChanged("Duration"); }
+            get { return durations; }
+            set { durations = value; OnPropertyChanged("Durations"); }
         }
-        //public FileStream? MusicFile
-        //{
-        //    get { return musicFile; }
-        //    set { musicFile = value; OnPropertyChanged("MusicFile"); }
-        //}
+        public FileStream? MusicFile
+        {
+            get { return musicFile; }
+            set { musicFile = value; OnPropertyChanged("MusicFile"); }
+        }
     }
 }

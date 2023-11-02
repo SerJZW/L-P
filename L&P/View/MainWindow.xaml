@@ -80,19 +80,28 @@
                     BorderThickness="1" 
                     CornerRadius="30"
                     DockPanel.Dock="Bottom"
-                    Margin="10,0,10,10">
+                    Margin="10,0,10,-20">
                     <DockPanel>
                         <Button Name="Back" Style="{StaticResource PlayerButtons}">
                             <Image Source="/Source/UI_Icon/Back.png"/>
                         </Button>
-                        <Button Name="Play" Style="{StaticResource PlayerButtons}">
+                        <Button Name="Play"
+                                Command="{Binding PlayCommand}"
+                                Style="{StaticResource PlayerButtons}">
                             <Image Source="/Source/UI_Icon/Play.png"/>
                         </Button>
                         <Button Name="Next" Style="{StaticResource PlayerButtons}">
                             <Image Source="/Source/UI_Icon/Next.png"/>
                         </Button>
-                        <Slider Value="0" Minimum="0" Maximum="100" Height="30px" Width="1200" HorizontalAlignment="Left" Margin="20,20,0,0"/>
-                        <Slider Value="0" Minimum="0" Maximum="100" Height="30px" Width="150" HorizontalAlignment="Right" Margin="0,20,30,0"/>
+                        <TextBlock Text="{Binding CurrentPosition, StringFormat=mm\\:ss}"
+                                   TextAlignment="Center"
+                                   Width="100"
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center"
+                                   FontSize="20pt"
+                                   Margin="10,0,0,0"/>
+                        <Slider Minimum="0" Maximum="100" Height="30px" Width="1200" HorizontalAlignment="Left" Margin="20,20,0,0"/>
+                        <Slider Value="{Binding Volume}" Minimum="0" Maximum="1" Height="30px" Width="150" HorizontalAlignment="Right" Margin="0,20,30,0"/>
                     </DockPanel>
                 </Border>
             </DockPanel>

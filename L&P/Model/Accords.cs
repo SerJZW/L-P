@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace L_P.Model
 {
@@ -8,7 +9,7 @@ namespace L_P.Model
         private string? accorderName;
         private string? album;
         private int date;
-        private double duration;
+        private TimeSpan durations;
         private FileStream? accordFile;
 
         public string? AccordName
@@ -31,10 +32,10 @@ namespace L_P.Model
             get { return date; }
             set { date = value; OnPropertyChanged("Date"); }
         }
-        public double Duration
+        public TimeSpan Durations
         {
-            get { return duration; }
-            set { duration = value; OnPropertyChanged("Duration"); }
+            get { return durations; }
+            set { durations = value; OnPropertyChanged("Duration"); }
         }
         public FileStream? AccordFile
         {

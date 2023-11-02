@@ -42,6 +42,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="TagLibSharp" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Source\Image\Logo.png" />
     <Resource Include="Source\UI_Icon\Next.png" />
     <Resource Include="Source\UI_Icon\Play.png" />
