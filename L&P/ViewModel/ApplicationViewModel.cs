@@ -242,7 +242,7 @@ namespace L_P
             }
         }
         #endregion
-        #region Player
+        #region AudioPlayer
         MediaPlayer mediaPlayer = new MediaPlayer();
         private bool isPlaying = false;
         public RelayCommand PlayCommand
