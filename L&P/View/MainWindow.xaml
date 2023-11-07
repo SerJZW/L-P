@@ -82,7 +82,7 @@
                     DockPanel.Dock="Bottom"
                     Margin="10,0,10,-20">
                     <DockPanel>
-                        <Button Name="Back" Style="{StaticResource PlayerButtons}">
+                        <Button Name="Back" Command="{Binding PreviousTrackCommand}" Style="{StaticResource PlayerButtons}">
                             <Image Source="/Source/UI_Icon/Back.png"/>
                         </Button>
                         <Button Name="Play"
@@ -90,7 +90,7 @@
                                 Style="{StaticResource PlayerButtons}">
                             <Image Source="/Source/UI_Icon/Play.png"/>
                         </Button>
-                        <Button Name="Next" Style="{StaticResource PlayerButtons}">
+                        <Button Name="Next" Command="{Binding NextTrackCommand}" Style="{StaticResource PlayerButtons}">
                             <Image Source="/Source/UI_Icon/Next.png"/>
                         </Button>
                         <TextBlock Text="{Binding CurrentPosition, StringFormat=mm\\:ss}"

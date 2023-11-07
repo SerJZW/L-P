@@ -24,5 +24,6 @@ namespace L_P.View
             InitializeComponent();
             DataContext = new ApplicationViewModel();
         }
+
     }
 }

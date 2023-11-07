@@ -16,6 +16,7 @@ namespace L_P
     public class ApplicationViewModel : Notify
     {
         #region Selected
+        private int currentTrackIndex = 0;
         private object? selectedAudio;
         public object? SelectedAudio
         {
@@ -24,6 +25,14 @@ namespace L_P
             {
                 selectedAudio = value;
                 OnPropertyChanged("SelectedAudio");
+                if (selectedAudio is Music music)
+                {
+                    currentTrackIndex = Music.IndexOf(music);
+                }
+                else if (selectedAudio is Podcast podcast)
+                {
+                    currentTrackIndex = Podcasts.IndexOf(podcast);
+                }
             }
         }
         private Accords? selectedAccords;
@@ -41,13 +50,12 @@ namespace L_P
         {
             Music = new ObservableCollection<Music>()
             {
-                new Music{SongName = "Кукла Колдуна", SongerName = "КиШ", Album = "Акустический альбом", Date = 1998, Durations = new TimeSpan(0,3,23)}
             };
             Podcasts = new ObservableCollection<Podcast>();
             Accords = new ObservableCollection<Accords>();
 
             DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1); 
+            timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += (sender, e) => CurrentPosition = mediaPlayer.Position;
             timer.Start();
         }
@@ -245,34 +253,83 @@ namespace L_P
         #region AudioPlayer
         MediaPlayer mediaPlayer = new MediaPlayer();
         private bool isPlaying = false;
+        private TimeSpan? lastPosition;
+
         public RelayCommand PlayCommand
         {
             get
             {
                 return (new RelayCommand(obj =>
                 {
-                    if (SelectedAudio != null) 
+                    if (SelectedAudio != null)
                     {
                         if (isPlaying)
                         {
+                            lastPosition = mediaPlayer.Position;
                             mediaPlayer.Pause();
                             isPlaying = false;
                         }
                         else
                         {
-                            if (SelectedAudio is Music) 
+                            if (SelectedAudio is Music)
                             {
-                                mediaPlayer.Open(new Uri((SelectedAudio as Music).MusicFile.Name)); 
+                                mediaPlayer.Open(new Uri((SelectedAudio as Music).MusicFile.Name));
                             }
-                            else if (SelectedAudio is Podcast) 
+                            else if (SelectedAudio is Podcast)
                             {
                                 mediaPlayer.Open(new Uri((SelectedAudio as Podcast).PodcastFile.Name));
                             }
+
+                            if (lastPosition.HasValue)
+                            {
+                                mediaPlayer.Position = lastPosition.Value;
+                            }
+
                             mediaPlayer.Play();
+
                             isPlaying = true;
                         }
                     }
                 }));
+            }
+        }
+
+        public RelayCommand NextTrackCommand
+        {
+            get
+            {
+                return new RelayCommand(obj =>
+                {
+                    if (currentTrackIndex < Music.Count)
+                    {
+                        currentTrackIndex++;
+                        if (currentTrackIndex >= 0 && currentTrackIndex < Music.Count)
+                        {
+                            mediaPlayer.Open(new Uri(Music[currentTrackIndex].MusicFile.Name));
+                            mediaPlayer.Play();
+                            isPlaying = true;
+                        }
+                    }
+                });
+            }
+        }
+        public RelayCommand PreviousTrackCommand
+        {
+            get
+            {
+                return new RelayCommand(obj =>
+                {
+                    if (currentTrackIndex > 0)
+                    {
+                        currentTrackIndex--;
+                        if (currentTrackIndex >= 0 && currentTrackIndex < Music.Count)
+                        {
+                            mediaPlayer.Open(new Uri(Music[currentTrackIndex].MusicFile.Name));
+                            mediaPlayer.Play();
+                            isPlaying = true;
+                        }
+                    }
+                });
             }
         }
         #endregion
@@ -298,7 +355,7 @@ namespace L_P
                 currentPosition = value;
                 OnPropertyChanged("CurrentPosition");
             }
-        }       
+        }
         #endregion
     }
 }
