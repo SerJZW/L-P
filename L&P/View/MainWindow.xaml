@@ -7,8 +7,8 @@
         xmlns:UserControls ="clr-namespace:L_P.View"
         mc:Ignorable="d"      
         Title="LaP" Icon="/Source/Image/Logo.png"  
-        Height="1080px" Width="1920px" 
-        MinWidth="1280px" MinHeight="900px">
+       
+        MinWidth="1040px" MinHeight="600px">
 
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -80,7 +80,7 @@
                     BorderThickness="1" 
                     CornerRadius="30"
                     DockPanel.Dock="Bottom"
-                    Margin="10,0,10,-20">
+                    Margin="10,0,10,0">
                     <DockPanel>
                         <Button Name="Back" Command="{Binding PreviousTrackCommand}" Style="{StaticResource PlayerButtons}">
                             <Image Source="/Source/UI_Icon/Back.png"/>
