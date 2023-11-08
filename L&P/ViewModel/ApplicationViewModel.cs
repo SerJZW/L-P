@@ -48,9 +48,7 @@ namespace L_P
 
         public ApplicationViewModel()
         {
-            Music = new ObservableCollection<Music>()
-            {
-            };
+            Music = new ObservableCollection<Music>();
             Podcasts = new ObservableCollection<Podcast>();
             Accords = new ObservableCollection<Accords>();
 
