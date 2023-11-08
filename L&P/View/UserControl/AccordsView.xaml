@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <Viewbox Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
             <StackPanel Grid.Row="1" Orientation="Vertical">
-                <Label Content="Аккорды" Style="{StaticResource LabelStyle}"/>
+                <TextBlock Text="Аккорды" Style="{StaticResource TBStyle}"/>
                 <ListView Style="{StaticResource ListStyle}" Background="AliceBlue" Margin="108,0,100,0">
                     <ListView.View>
                         <GridView>

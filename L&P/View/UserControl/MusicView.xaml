@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
         <Viewbox Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
             <StackPanel Grid.Row="1" Orientation="Vertical">
-                <Label Content="Музыка" Style="{StaticResource LabelStyle}"/>
+                <TextBlock Text="Музыка" Style="{StaticResource TBStyle}"/>
                 <ListView  ItemsSource="{Binding Music}" SelectedItem="{Binding SelectedAudio}" Style="{StaticResource ListStyle}" Margin="108,0,100,0">
                     <ListView.View>
                         <GridView>

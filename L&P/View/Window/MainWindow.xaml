@@ -7,12 +7,12 @@
         xmlns:UserControls ="clr-namespace:L_P.View"
         mc:Ignorable="d"      
         Title="LaP" Icon="/Source/Image/Logo.png"  
-       Width="1920" Height="1080"
+      
         MinWidth="1280px" MinHeight="600px">
 
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="6*"/>
             <RowDefinition Height="0.8*"/>
         </Grid.RowDefinitions>

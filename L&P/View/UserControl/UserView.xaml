@@ -9,7 +9,7 @@
              MinWidth="1280px" MinHeight="900px">
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1.5*"/>
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
         <Viewbox Grid.Row="0" Margin="30,30,30,0">
