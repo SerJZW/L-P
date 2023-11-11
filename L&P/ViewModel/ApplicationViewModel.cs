@@ -4,7 +4,6 @@ using L_P.View;
 using Microsoft.Win32;
 using System;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -89,30 +88,6 @@ namespace L_P
                     if ((obj as string) == "SettingView") MyContentControl = new SettingView();
                     if ((obj as string) == "UserAgreementView") MyContentControl = new UserAgreementView();
                     if ((obj as string) == "AboutAplView") MyContentControl = new AboutAplView();
-                }));
-            }
-        }
-        #endregion
-        #region SmthCommand
-        public RelayCommand ExitCommand
-        {
-            get
-            {
-                return new RelayCommand(obj =>
-                {
-                    System.Windows.Application.Current.Shutdown();
-                });
-            }
-        }
-
-        public RelayCommand ContactCommand
-        {
-            get
-            {
-                return (new RelayCommand(obj =>
-                {
-                    string url = "https://sun6-22.userapi.com/s/v1/if2/N8gfbNFwrAPxOwsrvN8RQ-8IoxiMX_jy8N7zLUf4itGzIzR_6yXNwcfnF7TVALYa_GSL6-99tcshKtpidnDzB9zL.jpg?size=1686x1686&quality=96&crop=203,152,1686,1686&ava=1";
-                    System.Diagnostics.Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
                 }));
             }
         }
@@ -286,6 +261,7 @@ namespace L_P
                             mediaPlayer.Play();
 
                             isPlaying = true;
+
                         }
                     }
                 }));
@@ -352,6 +328,75 @@ namespace L_P
             {
                 currentPosition = value;
                 OnPropertyChanged("CurrentPosition");
+            }
+        }
+        #endregion
+        #region StyleSwitcher
+        private bool _isChecked;
+        public bool IsChecked
+        {
+            get { return _isChecked; }
+            set
+            {
+                _isChecked = value;
+                OnPropertyChanged("IsChecked");
+            }
+        }
+
+        private Style? windowStyle;
+
+        public Style? WindowStyle
+        {
+            get { return windowStyle; }
+            set
+            {
+                if (windowStyle != value)
+                {
+                    windowStyle = value;
+                    OnPropertyChanged("WindowStyle");
+                }
+            }
+        }
+        private Style? userControlStyle;
+
+        public Style? UserControlStyle
+        {
+            get { return userControlStyle; }
+            set
+            {
+                if (userControlStyle != value)
+                {
+                    userControlStyle = value;
+                    OnPropertyChanged("UserControlStyle");
+                }
+            }
+        }
+
+        public RelayCommand ThemeChange
+        {
+            get
+            {
+                return new RelayCommand(obj =>
+                {
+                    IsDarkTheme = !IsDarkTheme;
+                });
+            }
+        }
+
+        private bool isDarkTheme;
+
+        public bool IsDarkTheme
+        {
+            get { return isDarkTheme; }
+            set
+            {
+                if (isDarkTheme != value)
+                {
+                    isDarkTheme = value;
+                    OnPropertyChanged("IsDarkTheme");
+                    WindowStyle = IsDarkTheme ? Application.Current.FindResource("DarkWindowStyle") as Style : Application.Current.FindResource("LightWindowStyle") as Style;
+                    UserControlStyle = IsDarkTheme ? Application.Current.FindResource("DarkUC") as Style : Application.Current.FindResource("LightUC") as Style;
+                }
             }
         }
         #endregion

@@ -22,7 +22,7 @@ namespace L_P.View
     {
         public MainView()
         {
-            InitializeComponent();
+            InitializeComponent();          
         }
     }
 }

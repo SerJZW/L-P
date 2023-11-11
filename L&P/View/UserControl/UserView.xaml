@@ -5,11 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:L_P.View"
              mc:Ignorable="d" 
-             d:Height="1080px" d:Width="1920px" 
-             MinWidth="1280px" MinHeight="900px">
-    <Grid Background="White">
+             Style="{Binding UserControlStyle}"
+             MinWidth="1280px" MinHeight="500px">
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
         <Viewbox Grid.Row="0" Margin="30,30,30,0">
@@ -107,7 +107,7 @@
                             Name="UserAgreementView"
                             Command="{Binding SetObject}"
                             CommandParameter="UserAgreementView"
-                    Style="{StaticResource ButtonUserStyle}">
+                            Style="{StaticResource ButtonUserStyle}">
                             <TextBlock TextWrapping="Wrap" Text="Пользовательское соглашение" />
                         </Button>
                     </StackPanel>
@@ -123,6 +123,7 @@
                         <Button
                     Margin="0,35,0,15"
                     VerticalAlignment="Bottom"
+                    Name="Exit"
                     FontSize="25pt"
                     Command="{Binding ExitCommand}"
                     Style="{StaticResource ButtonUserStyle}">

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using L_P.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace L_P.View
         public SettingView()
         {
             InitializeComponent();
+            SmthCommand smthCommand = new SmthCommand();
+            ContactUs.DataContext = smthCommand;
         }
     }
 }

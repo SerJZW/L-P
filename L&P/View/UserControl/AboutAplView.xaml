@@ -5,18 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:L_P.View"
              mc:Ignorable="d" 
-             d:DesignHeight="1080" d:DesignWidth="1920">
-    <Grid Background="White">
+             d:DesignHeight="1080" d:DesignWidth="1920"
+             Style="{Binding UserControlStyle}">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1.5*"/>
             <RowDefinition Height="8*"/>
         </Grid.RowDefinitions>
         <DockPanel Grid.Row="0">
             <Border BorderBrush="Black" BorderThickness="0,0,0,2">
-        <TextBlock Text="О приложении" FontSize="40pt" Margin="30,0,0,0"/>
-        </Border>
-           </DockPanel>
-            <DockPanel Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,20,30,0">
+                <TextBlock Text="О приложении" FontSize="40pt" Margin="30,0,0,0"/>
+            </Border>
+        </DockPanel>
+        <DockPanel Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,20,30,0">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <TextBlock TextWrapping="Wrap" FontSize="16pt"  Width="1000">
                     Приложение LaP - это универсальное музыкальное приложение, специально разработанное для музыкантов и всех, кто ценит музыку и подкасты. LaP объединяет в себе музыкальный плеер и аккорды для помощи музыкантам в игре на инструментах и исполнении песен, а также предоставляет доступ к разнообразным подкастам.

@@ -5,24 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:L_P.View"
         xmlns:UserControls ="clr-namespace:L_P.View"
-        mc:Ignorable="d"      
-        Title="LaP" Icon="/Source/Image/Logo.png"  
-      
-        MinWidth="1280px" MinHeight="600px">
-
-    <Grid Background="White">
+        mc:Ignorable="d"
+        Title="LaP" Icon="/Source/Image/Logo.png"       
+        MinWidth="1280px" MinHeight="700px" Style="{Binding WindowStyle}">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="6*"/>
             <RowDefinition Height="0.8*"/>
         </Grid.RowDefinitions>
         <Viewbox Grid.Row="0">
-            <DockPanel Name="Header" Grid.Row="0">
+            <DockPanel  Grid.Row="0">
                 <Border CornerRadius="0,0,30,30" 
                     BorderBrush="Black" 
                     BorderThickness="1" 
                     DockPanel.Dock="Top">
-                    <DockPanel>
+                    <DockPanel Name="Header">
                         <TextBlock Text="LaP" 
                        Style="{StaticResource TextBlockReg}"
                        HorizontalAlignment="Left"
@@ -55,7 +53,7 @@
                                 FontSize="16pt"            
                                 Height="70px"
                                 Content="+ Добавить..."
-                                Background="Gray"  
+                                Background="LightSkyBlue"  
                                 Margin="150,0,60,0"            
                                 Style="{StaticResource ButtonMenuStyle}"
                                 Command="{Binding SetObject}"
@@ -75,13 +73,13 @@
             </DockPanel>
         </Viewbox>
         <Viewbox Grid.Row="2">
-            <DockPanel Name="Footer" Grid.Row="2">
+            <DockPanel  Grid.Row="2">
                 <Border BorderBrush="Black" 
                     BorderThickness="1" 
                     CornerRadius="30"
                     DockPanel.Dock="Bottom"
                     Margin="10,0,10,0">
-                    <DockPanel>
+                    <DockPanel Name="Footer">
                         <Button Name="Back" Command="{Binding PreviousTrackCommand}" Style="{StaticResource PlayerButtons}">
                             <Image Source="/Source/UI_Icon/Back.png"/>
                         </Button>
@@ -107,7 +105,7 @@
             </DockPanel>
         </Viewbox>
         <ContentControl Grid.Row="1" Name="MyContentControl" Content="{Binding MyContentControl, UpdateSourceTrigger=PropertyChanged}">
-          
+
         </ContentControl>
     </Grid>
 </Window>

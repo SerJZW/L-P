@@ -10,6 +10,7 @@
                 <ResourceDictionary Source="/Styles/UserStyles.xaml"/>
                 <ResourceDictionary Source="/Styles/MainStyles.xaml"/>
                 <ResourceDictionary Source="/Styles/ListsStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/WindowStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

@@ -6,15 +6,16 @@
              xmlns:local="clr-namespace:L_P.View"
              mc:Ignorable="d" 
              d:Height="1080px" d:Width="1920px" 
-             MinWidth="1280px" MinHeight="900px">
-    <Grid Background="White">
+             MinWidth="1280px" MinHeight="900px"
+             Style="{Binding UserControlStyle}">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
         <Viewbox Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
-            <StackPanel Grid.Row="1" Orientation="Vertical">
+            <StackPanel Grid.Row="1"  Orientation="Vertical">
                 <TextBlock Text="Музыка" Style="{StaticResource TBStyle}"/>
-                <ListView  ItemsSource="{Binding Music}" SelectedItem="{Binding SelectedAudio}" Style="{StaticResource ListStyle}" Margin="108,0,100,0">
+                <ListView ItemsSource="{Binding Music}" SelectedItem="{Binding SelectedAudio}" Style="{StaticResource ListStyle}" Margin="108,0,100,0">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Композиция" 
