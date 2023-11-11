@@ -8,17 +8,12 @@
         <Setter Property="HorizontalAlignment" Value="Right"/>
         <Setter Property="Margin" Value="0,0,20,0"/>
     </Style>
-    <Style x:Key="SliderStyle" TargetType="Slider">
-        <Setter Property="Height" Value="30"/>
-        <Setter Property="Background" Value="Transparent"/>
-    </Style>
     <Style x:Key="ListStyle" TargetType="ListView">
         <Setter Property="FontFamily" Value="l_p;\source\fonts\damione-regular.ttf#DaMiOne-Regular"/>
         <Setter Property="FontStyle" Value="Italic"/>
-        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Background" Value="WhiteSmoke"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
-       
     </Style>
     <Style x:Key="GridViewColumnStyle" TargetType="GridViewColumnHeader">
         <Setter Property="Background" Value="White"/>

@@ -91,7 +91,7 @@
                             <ColumnDefinition Width="24"></ColumnDefinition>
                             <ColumnDefinition ></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Border Background="White" BorderBrush="White" BorderThickness="1" CornerRadius="0" Width="20" Height="20" VerticalAlignment="Center"  >
+                        <Border Background="Transparent" BorderBrush="Transparent" BorderThickness="1" CornerRadius="0" Width="20" Height="20" VerticalAlignment="Center"  >
                             <Grid>
                                 <Ellipse x:Name="outerEllipse" Grid.Column="0" Fill="Blue" Margin="2">
                                 </Ellipse>

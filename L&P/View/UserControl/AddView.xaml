@@ -34,7 +34,7 @@
                     <StackPanel>
                         <Image
                     Style="{StaticResource UIStyle}"
-                    Source="/Source/Image/Logo.png"/>
+                    Source="/Source/UI_Icon/Music.png"/>
                         <Button
                             Margin="0,35,0,15"
                             VerticalAlignment="Bottom"

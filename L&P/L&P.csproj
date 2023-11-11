@@ -18,6 +18,7 @@
     <None Remove="Source\UI_Icon\Confirm.png" />
     <None Remove="Source\UI_Icon\Fallback.png" />
     <None Remove="Source\UI_Icon\Logout.png" />
+    <None Remove="Source\UI_Icon\Music.png" />
     <None Remove="Source\UI_Icon\Next.png" />
     <None Remove="Source\UI_Icon\Pause.png" />
     <None Remove="Source\UI_Icon\Play.png" />
@@ -44,6 +45,7 @@
   <ItemGroup>
     <Resource Include="Source\Image\Logo.png" />
     <Resource Include="Source\UI_Icon\Logout.png" />
+    <Resource Include="Source\UI_Icon\Music.png" />
     <Resource Include="Source\UI_Icon\Next.png" />
     <Resource Include="Source\UI_Icon\Pause.png" />
     <Resource Include="Source\UI_Icon\Play.png" />
