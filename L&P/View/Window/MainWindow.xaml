@@ -7,12 +7,12 @@
         xmlns:UserControls ="clr-namespace:L_P.View"
         mc:Ignorable="d"
         Title="LaP" Icon="/Source/Image/Logo.png"       
-        MinWidth="1280px" MinHeight="700px" Style="{Binding WindowStyle}">
+        MinWidth="1280px" MinHeight="700px" Style="{Binding WindowStyle}" >
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="6*"/>
-            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
         <Viewbox Grid.Row="0">
             <DockPanel  Grid.Row="0">
@@ -20,7 +20,7 @@
                     BorderBrush="Black" 
                     BorderThickness="1" 
                     DockPanel.Dock="Top">
-                    <DockPanel Name="Header">
+                    <DockPanel Name="Header" DataContext="{Binding ContentSwitch}">
                         <TextBlock Text="LaP" 
                        Style="{StaticResource TextBlockReg}"
                        HorizontalAlignment="Left"
@@ -78,16 +78,27 @@
                     BorderThickness="1" 
                     CornerRadius="30"
                     DockPanel.Dock="Bottom"
-                    Margin="10,0,10,0">
+                    Margin="10,0,0,0">
                     <DockPanel Name="Footer">
                         <Button Name="Back" Command="{Binding PreviousTrackCommand}" Style="{StaticResource PlayerButtons}">
                             <Image Source="/Source/UI_Icon/Back.png"/>
                         </Button>
-                        <Button Name="Play"
-                                Command="{Binding PlayCommand}"
-                                Style="{StaticResource PlayerButtons}">
-                            <Image Source="/Source/UI_Icon/Play.png"/>
-                        </Button>
+                        <ToggleButton Style="{StaticResource PlayStyle}" Name="PlayButton" Command="{Binding PlayCommand}" Width="50">
+                            <ToggleButton.Content>
+                                <Image x:Name="PlayImage">
+                                    <Image.Style>
+                                        <Style TargetType="Image">
+                                            <Setter Property="Source" Value="/Source/UI_Icon/Play.png" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource AncestorType={x:Type ToggleButton}}}" Value="True">
+                                                    <Setter Property="Source" Value="/Source/UI_Icon/Pause.png" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                            </ToggleButton.Content>
+                        </ToggleButton>
                         <Button Name="Next" Command="{Binding NextTrackCommand}" Style="{StaticResource PlayerButtons}">
                             <Image Source="/Source/UI_Icon/Next.png"/>
                         </Button>
@@ -99,12 +110,12 @@
                                    FontSize="20pt"
                                    Margin="10,0,0,0"/>
                         <Slider Minimum="0" Maximum="100" Height="30px" Width="1200" HorizontalAlignment="Left" Margin="20,20,0,0"/>
-                        <Slider Value="{Binding Volume}" Minimum="0" Maximum="1" Height="30px" Width="150" HorizontalAlignment="Right" Margin="0,20,30,0"/>
+                        <Slider Value="{Binding Volume}" Style="{StaticResource SliderStyle}" Minimum="0" Maximum="1" Height="30px" Width="150" HorizontalAlignment="Right" Margin="0,20,30,0"/>
                     </DockPanel>
                 </Border>
             </DockPanel>
         </Viewbox>
-        <ContentControl Grid.Row="1" Name="MyContentControl" Content="{Binding MyContentControl, UpdateSourceTrigger=PropertyChanged}">
+        <ContentControl Grid.Row="1" Name="MyContentControl" Content="{Binding ContentSwitch.MyContentControl}">
 
         </ContentControl>
     </Grid>

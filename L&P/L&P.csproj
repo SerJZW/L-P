@@ -19,6 +19,7 @@
     <None Remove="Source\UI_Icon\Fallback.png" />
     <None Remove="Source\UI_Icon\Logout.png" />
     <None Remove="Source\UI_Icon\Next.png" />
+    <None Remove="Source\UI_Icon\Pause.png" />
     <None Remove="Source\UI_Icon\Play.png" />
     <None Remove="Source\UI_Icon\Podcast.png" />
     <None Remove="Source\UI_Icon\Setting.png" />
@@ -33,7 +34,6 @@
     <Resource Include="Source\UI_Icon\Back.png" />
     <Resource Include="Source\UI_Icon\Confirm.png" />
     <Resource Include="Source\UI_Icon\Fallback.png" />
-    <Resource Include="Source\UI_Icon\Logout.png" />
 	<Resource Include="Source\Fonts\DaMiOne-Regular.ttf" />
   </ItemGroup>
 
@@ -43,7 +43,9 @@
 
   <ItemGroup>
     <Resource Include="Source\Image\Logo.png" />
+    <Resource Include="Source\UI_Icon\Logout.png" />
     <Resource Include="Source\UI_Icon\Next.png" />
+    <Resource Include="Source\UI_Icon\Pause.png" />
     <Resource Include="Source\UI_Icon\Play.png" />
     <Resource Include="Source\UI_Icon\Podcast.png" />
     <Resource Include="Source\UI_Icon\Setting.png" />

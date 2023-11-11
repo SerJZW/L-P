@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:L_P.View"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              Style="{Binding UserControlStyle}"
              MinWidth="1280px" MinHeight="500px">
     <Grid>
@@ -54,7 +54,7 @@
                  VerticalAlignment="Top"
                  HorizontalAlignment="Center"
                  Margin="0,70,0,0">
-            <DockPanel Grid.Row="1">
+            <DockPanel Grid.Row="1" DataContext="{Binding ContentSwitch}">
                 <Border
                 Margin="200,0,0,0"
                 Style="{StaticResource BorderUserStyle}">

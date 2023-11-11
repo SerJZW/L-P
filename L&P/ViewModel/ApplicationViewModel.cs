@@ -1,6 +1,7 @@
 ﻿using L_P.Model;
 using L_P.Model.Event;
 using L_P.View;
+using L_P.ViewModel;
 using Microsoft.Win32;
 using System;
 using System.Collections.ObjectModel;
@@ -14,6 +15,16 @@ namespace L_P
 {
     public class ApplicationViewModel : Notify
     {
+        #region ViewModels
+        private ContentSwitch? contentSwitch;
+        public ContentSwitch? ContentSwitch
+        {
+            get { return contentSwitch; }
+            set { contentSwitch = value; OnPropertyChanged("ContentSwitch"); }
+        }
+
+        #endregion
+
         #region Selected
         private int currentTrackIndex = 0;
         private object? selectedAudio;
@@ -50,48 +61,14 @@ namespace L_P
             Music = new ObservableCollection<Music>();
             Podcasts = new ObservableCollection<Podcast>();
             Accords = new ObservableCollection<Accords>();
+            ContentSwitch = new ContentSwitch();
 
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += (sender, e) => CurrentPosition = mediaPlayer.Position;
             timer.Start();
         }
-        #region ContentSwitch
-        private ContentControl? myContentControl;
-        public ContentControl MyContentControl
-        {
-            get
-            {
-                if (myContentControl == null) { myContentControl = new MainView(); }
-                return myContentControl;
-            }
-            set
-            {
-                myContentControl = value;
-                OnPropertyChanged("MyContentControl");
-            }
-        }
-        public RelayCommand? setObject;
 
-        public RelayCommand SetObject
-        {
-            get
-            {
-                return setObject ?? (setObject = new RelayCommand(obj =>
-                {
-                    if ((obj as string) == "MainView") MyContentControl = new MainView();
-                    if ((obj as string) == "MusicView") MyContentControl = new MusicView();
-                    if ((obj as string) == "PodcastView") MyContentControl = new PodcastView();
-                    if ((obj as string) == "AccordsView") MyContentControl = new AccordsView();
-                    if ((obj as string) == "AddView") MyContentControl = new AddView();
-                    if ((obj as string) == "UserView") MyContentControl = new UserView();
-                    if ((obj as string) == "SettingView") MyContentControl = new SettingView();
-                    if ((obj as string) == "UserAgreementView") MyContentControl = new UserAgreementView();
-                    if ((obj as string) == "AboutAplView") MyContentControl = new AboutAplView();
-                }));
-            }
-        }
-        #endregion
         #region AddCommandRealisations
         private OpenFileDialog openDialog = new OpenFileDialog();
         public RelayCommand SearchMusicCommand

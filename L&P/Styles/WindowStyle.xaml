@@ -4,14 +4,15 @@
         <Setter Property="Background" Value="White"/>
     </Style>
     <Style x:Key="DarkWindowStyle" TargetType="Window">
-        <Setter Property="Background" Value="Gray"/>
+        <Setter Property="Background" Value="#161a1e"/>
         <Setter Property="Foreground" Value="White"/>
     </Style>
     <Style x:Key="LightUC" TargetType="UserControl">
         <Setter Property="Background" Value="White"/>
     </Style>
     <Style x:Key="DarkUC" TargetType="UserControl">
-        <Setter Property="Background" Value="Gray"/>
+        <Setter Property="Background" Value="#18171c"/>
         <Setter Property="Foreground" Value="White"/>
     </Style>
+  
 </ResourceDictionary>

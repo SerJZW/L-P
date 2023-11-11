@@ -7,6 +7,11 @@
         <Setter Property="FontSize" Value="21pt"/>
         <Setter Property="FontFamily" Value="l_p;\source\fonts\damione-regular.ttf#DaMiOne-Regular"/>
         <Setter Property="FontStyle" Value="Italic"/>
+        <Setter Property="RenderTransform">
+            <Setter.Value>
+                <ScaleTransform ScaleX="1" ScaleY="1"/>
+            </Setter.Value>
+        </Setter>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="MinWidth" Value="40"/>
         <Setter Property="Template">
@@ -19,6 +24,22 @@
             </Setter.Value>
         </Setter>
         <Style.Triggers>
+            <EventTrigger RoutedEvent="Button.MouseEnter">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1.05" Duration="0:0:0.1"/>
+                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1.05" Duration="0:0:0.1"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Button.MouseLeave">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1" Duration="0:0:0.1"/>
+                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1" Duration="0:0:0.1"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="#3A2AEB"/>
                 <Setter Property="Button.Effect">
@@ -30,7 +51,7 @@
         </Style.Triggers>
         <Style.Resources>
             <Style TargetType="Border">
-                <Setter Property="CornerRadius" Value="30"/>
+                <Setter Property="CornerRadius" Value="15"/>
             </Style>
         </Style.Resources>
     </Style>
