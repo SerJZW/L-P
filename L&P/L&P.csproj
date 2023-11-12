@@ -11,6 +11,7 @@
   <ItemGroup>
     <None Remove="Source\Image\background.jpg" />
     <None Remove="Source\Image\backgroundsec.jpg" />
+    <None Remove="Source\Image\greenDay.jpg" />
     <None Remove="Source\Image\Logo.png" />
     <None Remove="Source\UI_Icon\AboutApl.png" />
     <None Remove="Source\UI_Icon\Accords.png" />
@@ -30,6 +31,7 @@
   <ItemGroup>
     <Resource Include="Source\Image\background.jpg" />
     <Resource Include="Source\Image\backgroundsec.jpg" />
+    <Resource Include="Source\Image\greenDay.jpg" />
     <Resource Include="Source\UI_Icon\AboutApl.png" />
     <Resource Include="Source\UI_Icon\Accords.png" />
     <Resource Include="Source\UI_Icon\Back.png" />

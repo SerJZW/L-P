@@ -53,7 +53,9 @@
                            VerticalAlignment="Top"
                            Margin="30,10,0,0"
                            FontSize="40pt"/>
-                        <ComboBox SelectedIndex="0" Style="{StaticResource ComboStyle}">
+                        <ComboBox SelectedIndex="0" 
+                                  HorizontalAlignment="Right"
+                                  Style="{StaticResource RoundComboBox}">
                             <TextBlock>Русский</TextBlock>
                             <TextBlock>English</TextBlock>
                         </ComboBox>

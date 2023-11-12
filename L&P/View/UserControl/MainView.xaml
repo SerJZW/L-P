@@ -11,11 +11,14 @@
         <Viewbox Grid.Row="1">
             <DockPanel Grid.Row="1">
                 <Border Margin="70,50,0,50" Style="{StaticResource BorderMainStyle}">
-                    <TextBlock Style="{StaticResource TextBlockMainStyle}"/>
+                    <StackPanel>
+                    <TextBlock Style="{StaticResource TextBlockMainStyle}" Text="Панк-трио Green Day отменило концерт в лондонском Electric Ballroom. Как объяснила группа в одной из социальных сетей, это связано с неожиданной болезнью. Участники коллектива не объяснили, кто именно из артистов Green Day испытывает недуг."/>
+                        <Image Source="/Source/Image/greenDay.jpg" Margin="30,30,30,30"/>
+                    </StackPanel>
                 </Border>
                 <Border Margin="70,50,50,50" VerticalAlignment="Bottom"  
                             Style="{StaticResource BorderMainStyle2}">
-                    <TextBlock Style="{StaticResource TextBlockMainStyle2}"/>
+                    <TextBlock Style="{StaticResource TextBlockMainStyle2}" Text="Легенды The Beatles вошли в историю топ-чарта Великобритании как группа с самым длинным разрывом между первым и последним хитом, возглавившим рейтинг. Между появлением коллектива в чарте с From Me to You (1963) и их последним треком Now And Then (2023) прошло больше 60 лет."/>
                 </Border>
             </DockPanel>
         </Viewbox>
