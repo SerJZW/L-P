@@ -8,7 +8,6 @@
              d:Height="1080px" d:Width="1920px" 
             MinWidth="1280px" MinHeight="900px"
             Style="{Binding UserControlStyle}">
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="6*"/>

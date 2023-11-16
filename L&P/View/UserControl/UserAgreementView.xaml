@@ -6,8 +6,7 @@
              xmlns:local="clr-namespace:L_P.View"
              mc:Ignorable="d" 
              MinWidth="1280px" MinHeight="900px"
-             Style="{Binding UserControlStyle}"
-             >
+             Style="{Binding UserControlStyle}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1.5*"/>

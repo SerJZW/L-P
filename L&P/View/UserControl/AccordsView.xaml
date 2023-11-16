@@ -10,12 +10,14 @@
              MinWidth="1280px" MinHeight="900px">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="6*"/>
+
         </Grid.RowDefinitions>
-        <Viewbox Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
+        <Viewbox Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top">
             <StackPanel Grid.Row="1" Orientation="Vertical">
                 <TextBlock Text="Аккорды" Style="{StaticResource TBStyle}"/>
-                <ListView Style="{StaticResource ListStyle}"  Margin="108,0,100,0">
+                <ListView Style="{StaticResource ListStyle}" ItemsSource="{Binding Accords}" MaxHeight="100" SelectedItem="{Binding SelectedAccords}" Margin="108,0,100,0">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="{x:Type ListViewItem}">
                             <Setter Property="Background" Value="White"/>
@@ -35,15 +37,19 @@
                     </ListView.ItemContainerStyle>
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Композиция" Width="250" HeaderContainerStyle="{StaticResource GridViewColumnStyle}"/>
-                            <GridViewColumn Header="Исполнитель" Width="250" HeaderContainerStyle="{StaticResource GridViewColumnStyle2}"/>
-                            <GridViewColumn Header="Альбом" Width="250" HeaderContainerStyle="{StaticResource GridViewColumnStyle2}" />
-                            <GridViewColumn Header="Год" Width="250" HeaderContainerStyle="{StaticResource GridViewColumnStyle2}"/>
-                            <GridViewColumn Header="Продолжительность" Width="250" HeaderContainerStyle="{StaticResource GridViewColumnStyle3}"/>
+                            <GridViewColumn Header="Композиция" Width="1450" DisplayMemberBinding="{Binding AccordName}"  HeaderContainerStyle="{StaticResource GridViewColumnStyle2}"/>
                         </GridView>
                     </ListView.View>
                 </ListView>
             </StackPanel>
         </Viewbox>
+        <RichTextBox Grid.Row="1"
+                    Style="{StaticResource RichTextStyle}">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="{Binding SelectedAccords.AccordFileText}" FontWeight="Bold" FontSize="12" />
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
     </Grid>
 </UserControl>

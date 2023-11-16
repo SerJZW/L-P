@@ -3,7 +3,7 @@
     <Style x:Key="ButtonUserStyle" TargetType="Button">
         <Setter Property="Height" Value="131"/>
         <Setter Property="Width" Value="257"/>
-        <Setter Property="Background" Value="Red"/>
+        <Setter Property="Background" Value="DarkRed"/>
         <Setter Property="FontSize" Value="21pt"/>
         <Setter Property="FontFamily" Value="l_p;\source\fonts\damione-regular.ttf#DaMiOne-Regular"/>
         <Setter Property="FontStyle" Value="Italic"/>
@@ -55,6 +55,7 @@
             </Style>
         </Style.Resources>
     </Style>
+    
     <Style x:Key="BorderUserStyle" TargetType="Border">
         <Setter Property="Height" Value="360"/>
         <Setter Property="Width" Value="369"/>
@@ -63,8 +64,8 @@
         <Setter Property="CornerRadius" Value="20"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
-
     </Style>
+    
     <Style x:Key="UIStyle" TargetType="Image">
         <Setter Property="Width" Value="150px"/>
         <Setter Property="Height" Value="150px"/>
@@ -72,6 +73,7 @@
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
     </Style>
+
     <Style x:Key="BorderSettingStyle" TargetType="Border">
         <Setter Property="Height" Value="100"/>
         <Setter Property="Width" Value="1800"/>
@@ -81,7 +83,5 @@
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Margin" Value="30,30,30,0"/>
-
     </Style>
-    
 </ResourceDictionary>

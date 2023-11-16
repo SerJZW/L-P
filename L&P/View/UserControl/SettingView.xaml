@@ -4,11 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:L_P.View"
-             mc:Ignorable="d" 
-               
+             mc:Ignorable="d"          
               MinWidth="1280px" MinHeight="900px"
               Style="{Binding UserControlStyle}">
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>

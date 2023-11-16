@@ -6,7 +6,7 @@
         <Setter Property="Width" Value="300"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Margin" Value="50,0,0,0"/>
-        <Setter Property="Background" Value="Red"/>
+        <Setter Property="Background" Value="DarkRed"/>
         <Setter Property="FontFamily" Value="l_p;\source\fonts\damione-regular.ttf#DaMiOne-Regular"/>
         <Setter Property="FontStyle" Value="Italic"/>
         <Setter Property="FontSize" Value="25pt"/>
@@ -66,6 +66,7 @@
             </Style>
         </Style.Resources>
     </Style>
+    
     <Style x:Key="PlayerButtons" TargetType="Button">
         <Setter Property="Width" Value="50"/>
         <Setter Property="Height" Value="50"/>
@@ -107,7 +108,7 @@
             </EventTrigger>
         </Style.Triggers>
     </Style>
-
+    
     <Style x:Key="PlayStyle" TargetType="ToggleButton">
         <Setter Property="Width" Value="50"/>
         <Setter Property="Height" Value="50"/>
@@ -149,12 +150,13 @@
             </EventTrigger>
         </Style.Triggers>
     </Style>
+    
     <Style x:Key="BorderMainStyle" TargetType="Border">
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Height" Value="770"/>
         <Setter Property="Width" Value="570"/>
         <Setter Property="BorderThickness" Value="10px"/>
-        <Setter Property="BorderBrush" Value="Red"/>
+        <Setter Property="BorderBrush" Value="DarkRed"/>
         <Setter Property="CornerRadius" Value="10"/>
         <Setter Property="Margin" Value="0,35,100,40"/>
     </Style>
@@ -169,7 +171,7 @@
         <Setter Property="Height" Value="350"/>
         <Setter Property="Width" Value="1000"/>
         <Setter Property="BorderThickness" Value="10px"/>
-        <Setter Property="BorderBrush" Value="Red"/>
+        <Setter Property="BorderBrush" Value="DarkRed"/>
         <Setter Property="CornerRadius" Value="20"/>
         <Setter Property="Margin" Value="40,30,0,40"/>
     </Style>
@@ -178,8 +180,6 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Margin" Value="20,10,0,0"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
-
-
     </Style>
     <Style x:Key="TBStyle" TargetType="TextBlock">
         <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -189,6 +189,7 @@
         <Setter Property="Width" Value="303"/>
         <Setter Property="Margin" Value="100,0,0,0"/>
     </Style>
+    
     <Style x:Key="SliderStyle" TargetType="Slider">
         <Setter Property="Template">
             <Setter.Value>

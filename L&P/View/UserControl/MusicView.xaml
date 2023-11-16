@@ -56,7 +56,6 @@
                                             HeaderContainerStyle="{StaticResource GridViewColumnStyle3}"
                                             DisplayMemberBinding="{Binding Path = Durations, StringFormat={}{0:mm\\:ss}}"/>
                         </GridView>
-
                     </ListView.View>
                 </ListView>
             </StackPanel>

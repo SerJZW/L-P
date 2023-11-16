@@ -115,8 +115,6 @@
                 </Border>
             </DockPanel>
         </Viewbox>
-        <ContentControl Grid.Row="1" Name="MyContentControl" Content="{Binding ContentSwitch.MyContentControl}">
-
-        </ContentControl>
+        <ContentControl Grid.Row="1" Name="MyContentControl" Content="{Binding ContentSwitch.MyContentControl}"/>
     </Grid>
 </Window>

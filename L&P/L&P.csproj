@@ -9,6 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Source\Accords\Imagine Dragons - Demons.txt" />
+    <None Remove="Source\Accords\Король и шут - Кукла Колдуна.txt" />
+    <None Remove="Source\Accords\ТРИ ДНЯ ДОЖДЯ,MONA- ПРОЩАНИЕ.txt" />
     <None Remove="Source\Image\background.jpg" />
     <None Remove="Source\Image\backgroundsec.jpg" />
     <None Remove="Source\Image\greenDay.jpg" />
@@ -29,6 +32,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Source\Accords\Imagine Dragons - Demons.txt" />
+    <Resource Include="Source\Accords\Король и шут - Кукла Колдуна.txt" />
+    <Resource Include="Source\Accords\ТРИ ДНЯ ДОЖДЯ,MONA- ПРОЩАНИЕ.txt" />
     <Resource Include="Source\Image\background.jpg" />
     <Resource Include="Source\Image\backgroundsec.jpg" />
     <Resource Include="Source\Image\greenDay.jpg" />

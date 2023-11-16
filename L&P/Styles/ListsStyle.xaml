@@ -16,6 +16,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <Style x:Key="ComboBoxButtonStyle" TargetType="{x:Type ToggleButton}">
         <Setter Property="Template">
             <Setter.Value>
@@ -32,6 +33,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <Style  x:Key="RoundComboBox" TargetType="{x:Type ComboBox}">
         <Setter Property="Width" Value="180"/>
         <Setter Property="Height" Value="50"/>
@@ -94,6 +96,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <Style x:Key="ListStyle" TargetType="ListView">
         <Setter Property="FontFamily" Value="l_p;\source\fonts\damione-regular.ttf#DaMiOne-Regular"/>
         <Setter Property="FontStyle" Value="Normal"/>
@@ -110,6 +113,7 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    
     <Style x:Key="GridViewColumnStyle" TargetType="GridViewColumnHeader">
         <Setter Property="Margin" Value="1,0,1,0"/>
         <Setter Property="Background" Value="White"/>
@@ -133,6 +137,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <Style x:Key="GridViewColumnStyle2" TargetType="GridViewColumnHeader">
         <Setter Property="Margin" Value="1,0,1,0"/>
         <Setter Property="Background" Value="White"/>
@@ -156,6 +161,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+
     <Style x:Key="GridViewColumnStyle3" TargetType="GridViewColumnHeader">
         <Setter Property="Margin" Value="1,0,1,0"/>
         <Setter Property="Background" Value="White"/>
@@ -179,6 +185,24 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style x:Key="RichTextStyle" TargetType="RichTextBox">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Height" Value="350"/>
+        <Setter Property="Width" Value="1000"/>
+        <Setter Property="MinWidth" Value="600"/>
+        <Setter Property="MinWidth" Value="150"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Margin" Value="0,50,0,0"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="BorderBrush" Value="DarkRed"/>
+        <Setter Property="BorderThickness" Value="4"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="15"/>
+            </Style>
+        </Style.Resources>
 
-   
+    </Style>
 </ResourceDictionary>

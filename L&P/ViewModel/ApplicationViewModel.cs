@@ -9,7 +9,9 @@ using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Threading;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace L_P
 {
@@ -48,8 +50,8 @@ namespace L_P
         private Accords? selectedAccords;
         public Accords? SelectedAccords
         {
-            get { return SelectedAccords; }
-            set { SelectedAccords = value; OnPropertyChanged("SelectedAccords"); }
+            get { return selectedAccords; }
+            set { selectedAccords = value; OnPropertyChanged("SelectedAccords"); }
         }
         #endregion
         public ObservableCollection<Music> Music { get; set; }
@@ -58,9 +60,26 @@ namespace L_P
 
         public ApplicationViewModel()
         {
-            Music = new ObservableCollection<Music>();
-            Podcasts = new ObservableCollection<Podcast>();
-            Accords = new ObservableCollection<Accords>();
+            Music = new ObservableCollection<Music>() 
+            {
+                new Music{SongName = "Кукла Колдуна", SongerName = "Король и Шут", Album = "Акустический альбом", Date = 1998, Durations = TimeSpan.FromMinutes(3.23)},
+                new Music{SongName = "МАЛИНОВАЯ ЛАДА", SongerName = "GAYAZOV$ BROTHER$", Album = "МАЛИНОВАЯ ЛАДА", Date = 2021, Durations = TimeSpan.FromMinutes(3.33)},
+            };
+            Music[0].SetMusicFile("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Musics\\Korol_i_SHut_-_Kukla_kolduna_62570545.mp3");
+            Music[1].SetMusicFile("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Musics\\GAYAZOV_BROTHER_-_MALINOVAYA_LADA_73214200.mp3");
+            Podcasts = new ObservableCollection<Podcast>()
+            {
+                new Podcast{PodcastName = "Danza Kuduro", PodcasterName = "Don Lore V", Date = 2014, Duration = TimeSpan.FromMinutes(3.19)},
+            };
+            Podcasts[0].SetPodcastFile("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Podcasts\\Don_Omar_-_Danza_Kuduro_28587730.mp3");
+            Accords = new ObservableCollection<Accords>() 
+            {
+                new Accords{AccordName = "Король и шут - Кукла колдуна"},
+                new Accords{AccordName = "Imagine Dragons - Demons"},
+            };
+            Accords[0].SetAccordFile("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Accords\\Король и шут - Кукла Колдуна.txt");
+            Accords[1].SetAccordFile("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Accords\\Imagine Dragons - Demons.txt");
+
             ContentSwitch = new ContentSwitch();
 
             DispatcherTimer timer = new DispatcherTimer();
@@ -162,28 +181,24 @@ namespace L_P
             {
                 return (new RelayCommand(obj =>
                 {
-                    openDialog.Filter = "Аккорд файлы (.midi) | *.midi";
+                    openDialog.Filter = "Аккорд файлы (.txt) | *.txt";
                     openDialog.Title = "Выберите аккорд файлы....";
-                    bool? succses = openDialog.ShowDialog();
                     openDialog.Multiselect = true;
-                    if (succses == true)
+
+                    bool? success = openDialog.ShowDialog();
+
+                    if (success == true)
                     {
                         foreach (string fileName in openDialog.FileNames)
                         {
                             try
                             {
-                                TagLib.File file = TagLib.File.Create(fileName);
-
+                                string title = File.ReadAllText(fileName);
                                 Accords accords = new Accords
                                 {
-                                    AccordName = file.Tag.Title,
-                                    AccorderName = string.Join(", ", file.Tag.Performers),
-                                    Album = file.Tag.Album,
-                                    Date = (int)file.Tag.Year,
-                                    Durations = TimeSpan.FromSeconds(file.Properties.Duration.TotalSeconds),
-                                    AccordFile = new FileStream(fileName, FileMode.Open)
+                                    AccordName = Path.GetFileNameWithoutExtension(fileName),
+                                    AccordFileText = title
                                 };
-
                                 Accords.Add(accords);
                             }
                             catch (Exception ex)
@@ -199,6 +214,7 @@ namespace L_P
                 }));
             }
         }
+
         #endregion
         #region AudioPlayer
         MediaPlayer mediaPlayer = new MediaPlayer();
@@ -359,8 +375,7 @@ namespace L_P
                 });
             }
         }
-
-        private bool isDarkTheme;
+       private bool isDarkTheme;
 
         public bool IsDarkTheme
         {

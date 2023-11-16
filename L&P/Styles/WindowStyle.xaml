@@ -14,5 +14,4 @@
         <Setter Property="Background" Value="#18171c"/>
         <Setter Property="Foreground" Value="White"/>
     </Style>
-  
 </ResourceDictionary>

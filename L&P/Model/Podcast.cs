@@ -36,5 +36,17 @@ namespace L_P.Model
             get { return podcastFile; }
             set { podcastFile = value; OnPropertyChanged("PodcastFile"); }
         }
+        public void SetPodcastFile(string filePath)
+        {
+            try
+            {
+                FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+                PodcastFile = fileStream;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка при открытии музыкального файла: {ex.Message}");
+            }
+        }
     }
 }
