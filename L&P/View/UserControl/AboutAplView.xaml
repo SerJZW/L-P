@@ -1,12 +1,12 @@
 ﻿<UserControl x:Class="L_P.View.AboutAplView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:L_P.View"
-             mc:Ignorable="d" 
-             d:DesignHeight="1080" d:DesignWidth="1920"
-             Style="{Binding UserControlStyle}">
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                 xmlns:local="clr-namespace:L_P.View"
+                 mc:Ignorable="d" 
+                 d:DesignHeight="1080" d:DesignWidth="1920"
+                 Style="{Binding UserControlStyle}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1.5*"/>
@@ -17,20 +17,21 @@
                 <TextBlock Text="О приложении" FontSize="40pt" Margin="30,0,0,0"/>
             </Border>
         </DockPanel>
-        <DockPanel Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,20,30,0">
+        <DockPanel Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,20,30,0" Style="{StaticResource FadeInStyle}">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <TextBlock TextWrapping="Wrap" FontSize="16pt"  Width="1000">
-                    Приложение LaP - это универсальное музыкальное приложение, специально разработанное для музыкантов и всех, кто ценит музыку и подкасты. LaP объединяет в себе музыкальный плеер и аккорды для помощи музыкантам в игре на инструментах и исполнении песен, а также предоставляет доступ к разнообразным подкастам.
-                    <LineBreak/>
-                    Основные функции приложения:
-                     <LineBreak/>
-                    Плеер и музыкальная библиотека: LaP предоставляет мощный музыкальный плеер с возможностью создания собственных плейлистов, удобным управлением воспроизведением и поддержкой различных аудиоформатов.
-                    <LineBreak/>
-                    Аккорды и тексты песен: Музыканты могут находить аккорды и тексты к песням, чтобы легко играть и исполнять музыку. LaP предоставляет библиотеку аккордов, которая позволяет быстро найти нужные аккорды к любой композиции.
-                    <LineBreak/>
-                    Подкасты: Пользователи могут прослушивать подкасты на различные темы, будь то музыкальные интервью, обучающие программы, новости и многое другое. LaP собирает подкасты со всего мира для обеспечения разнообразия и доступности контента.
+                        Приложение LaP - это универсальное музыкальное приложение, специально разработанное для музыкантов и всех, кто ценит музыку и подкасты. LaP объединяет в себе музыкальный плеер и аккорды для помощи музыкантам в игре на инструментах и исполнении песен, а также предоставляет доступ к разнообразным подкастам.
+                        <LineBreak/>
+                        Основные функции приложения:
+                         <LineBreak/>
+                        Плеер и музыкальная библиотека: LaP предоставляет мощный музыкальный плеер с возможностью создания собственных плейлистов, удобным управлением воспроизведением и поддержкой различных аудиоформатов.
+                        <LineBreak/>
+                        Аккорды и тексты песен: Музыканты могут находить аккорды и тексты к песням, чтобы легко играть и исполнять музыку. LaP предоставляет библиотеку аккордов, которая позволяет быстро найти нужные аккорды к любой композиции.
+                        <LineBreak/>
+                        Подкасты: Пользователи могут прослушивать подкасты на различные темы, будь то музыкальные интервью, обучающие программы, новости и многое другое. LaP собирает подкасты со всего мира для обеспечения разнообразия и доступности контента.
                 </TextBlock>
             </ScrollViewer>
         </DockPanel>
+       
     </Grid>
 </UserControl>

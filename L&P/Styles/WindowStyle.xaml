@@ -14,4 +14,16 @@
         <Setter Property="Background" Value="#18171c"/>
         <Setter Property="Foreground" Value="White"/>
     </Style>
+
+    <Style x:Key="FadeInStyle" TargetType="DockPanel">
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation From="0" To="1" Duration="0:0:1" Storyboard.TargetProperty="Opacity"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>

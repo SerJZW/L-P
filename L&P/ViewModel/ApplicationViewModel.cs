@@ -84,8 +84,12 @@ namespace L_P
 
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += (sender, e) => CurrentPosition = mediaPlayer.Position;
+            timer.Tick += (sender, e) => CurrentPosition = mediaPlayer.Position;        
             timer.Start();
+            DispatcherTimer musicTimer = new DispatcherTimer();
+            musicTimer.Interval = TimeSpan.FromSeconds(1);
+            musicTimer.Tick += (sender, e) => _CurrentPosition = mediaPlayer.Position.TotalSeconds / 2;
+            musicTimer.Start();
         }
 
         #region AddCommandRealisations
@@ -280,6 +284,7 @@ namespace L_P
                 });
             }
         }
+
         public RelayCommand PreviousTrackCommand
         {
             get
@@ -299,6 +304,7 @@ namespace L_P
                 });
             }
         }
+
         #endregion
         #region Sliders
         private double volume = 1;
@@ -321,6 +327,21 @@ namespace L_P
             {
                 currentPosition = value;
                 OnPropertyChanged("CurrentPosition");
+            }
+        }
+
+        private double _currentPosition = 0;
+
+        public double _CurrentPosition
+        {
+            get { return _currentPosition; }
+            set
+            {
+                if (_currentPosition != value)
+                {
+                    _currentPosition = value;
+                    OnPropertyChanged("_CurrentPosition");
+                }
             }
         }
         #endregion

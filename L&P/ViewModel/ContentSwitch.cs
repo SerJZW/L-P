@@ -6,12 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Automation.Text;
 using System.Windows.Controls;
 
 namespace L_P.ViewModel
 {
     public class ContentSwitch : Notify
     {
+       
         #region ContentSwitch
         private ContentControl? myContentControl;
         public ContentControl MyContentControl

@@ -9,7 +9,7 @@
              Style="{Binding UserControlStyle}">
     <Grid>
         <Viewbox Grid.Row="1">
-            <DockPanel Grid.Row="1">
+            <DockPanel Grid.Row="1" Style="{StaticResource FadeInStyle}">
                 <Border Margin="70,50,0,50" Style="{StaticResource BorderMainStyle}">
                     <StackPanel>
                         <TextBlock Style="{StaticResource TextBlockMainStyle}" Text="Панк-трио Green Day отменило концерт в лондонском Electric Ballroom. Как объяснила группа в одной из социальных сетей, это связано с неожиданной болезнью. Участники коллектива не объяснили, кто именно из артистов Green Day испытывает недуг."/>

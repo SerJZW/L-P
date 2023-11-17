@@ -7,7 +7,7 @@
         xmlns:UserControls ="clr-namespace:L_P.View"
         mc:Ignorable="d"
         Title="LaP" Icon="/Source/Image/Logo.png"       
-        MinWidth="1280px" MinHeight="700px" Style="{Binding WindowStyle}" >
+        MinWidth="1280px" MinHeight="700px" Style="{Binding WindowStyle}" DataContext="{Binding StyleSwitcher}" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -75,10 +75,10 @@
         <Viewbox Grid.Row="2">
             <DockPanel  Grid.Row="2">
                 <Border BorderBrush="Black" 
-                    BorderThickness="1" 
-                    CornerRadius="30"
+                    BorderThickness="2" 
+                    CornerRadius="15"
                     DockPanel.Dock="Bottom"
-                    Margin="10,0,0,0">
+                    Margin="10,0,10,0">
                     <DockPanel Name="Footer">
                         <Button Name="Back" Command="{Binding PreviousTrackCommand}" Style="{StaticResource PlayerButtons}">
                             <Image Source="/Source/UI_Icon/Back.png"/>
@@ -109,7 +109,7 @@
                                    VerticalAlignment="Center"
                                    FontSize="20pt"
                                    Margin="10,0,0,0"/>
-                        <Slider Minimum="0" Maximum="100" Style="{StaticResource SliderStyle}" Height="30px" Width="1200" HorizontalAlignment="Left" Margin="20,0,20,0"/>
+                        <Slider  Minimum="0" Maximum="100" Value="{Binding _CurrentPosition}" Style="{StaticResource SliderStyle}" Height="30px" Width="1200" HorizontalAlignment="Left" Margin="20,0,20,0"/>
                         <Slider Value="{Binding Volume}" Style="{StaticResource SliderStyle}" Minimum="0" Maximum="1" Height="30px" Width="150" HorizontalAlignment="Right" Margin="0,0,30,0"/>
                     </DockPanel>
                 </Border>
