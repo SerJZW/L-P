@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:L_P.View"
              mc:Ignorable="d"
              Style="{Binding UserControlStyle}"
-             d:DesignHeight="1080" d:DesignWidth="1920"
+         
              MinWidth="1280px" MinHeight="900px">
     <Grid>
         <Grid.RowDefinitions>
@@ -43,13 +43,17 @@
                 </ListView>
             </StackPanel>
         </Viewbox>
-        <RichTextBox Grid.Row="1"
+        <Viewbox Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <DockPanel Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center">
+                <RichTextBox Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top"
                     Style="{StaticResource RichTextStyle}">
-            <FlowDocument>
-                <Paragraph>
-                    <Run Text="{Binding SelectedAccords.AccordFileText}" FontWeight="Bold" FontSize="12" />
-                </Paragraph>
-            </FlowDocument>
-        </RichTextBox>
+                    <FlowDocument>
+                        <Paragraph>
+                            <Run Text="{Binding SelectedAccords.AccordFileText}" FontWeight="Bold" FontSize="10" />
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+            </DockPanel>
+        </Viewbox>
     </Grid>
 </UserControl>

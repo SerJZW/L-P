@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <Viewbox Grid.Row="0">
             <DockPanel  Grid.Row="0">
-                <Border CornerRadius="0,0,30,30" 
+                <Border CornerRadius="0,0,15,15" 
                     BorderBrush="Black" 
                     BorderThickness="1" 
                     DockPanel.Dock="Top">
@@ -53,11 +53,11 @@
                                 FontSize="16pt"            
                                 Height="70px"
                                 Content="+ Добавить..."
-                                Background="LightSkyBlue"  
+                                Background="Gray"  
                                 Margin="150,0,60,0"            
                                 Style="{StaticResource ButtonMenuStyle}"
                                 Command="{Binding SetObject}"
-                                CommandParameter="AddView"/>
+                                CommandParameter="AddView" Cursor=""/>
                         <Button Width="70"
                                 Height="70"
                                 HorizontalAlignment="Right"
@@ -74,11 +74,11 @@
         </Viewbox>
         <Viewbox Grid.Row="2">
             <DockPanel  Grid.Row="2">
-                <Border BorderBrush="Black" 
+                <Border BorderBrush="DarkRed" 
                     BorderThickness="2" 
                     CornerRadius="15"
                     DockPanel.Dock="Bottom"
-                    Margin="10,0,10,0">
+                    Margin="5,0,5,0">
                     <DockPanel Name="Footer">
                         <Button Name="Back" Command="{Binding PreviousTrackCommand}" Style="{StaticResource PlayerButtons}">
                             <Image Source="/Source/UI_Icon/Back.png"/>

@@ -1,17 +1,16 @@
 ﻿using L_P.Model;
 using L_P.Model.Event;
-using L_P.View;
 using L_P.ViewModel;
 using Microsoft.Win32;
 using System;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
+using System.Windows.Media.Imaging;
 using System.Windows.Threading;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using TagLib;
+
 
 namespace L_P
 {
@@ -60,7 +59,7 @@ namespace L_P
 
         public ApplicationViewModel()
         {
-            Music = new ObservableCollection<Music>() 
+            Music = new ObservableCollection<Music>()
             {
                 new Music{SongName = "Кукла Колдуна", SongerName = "Король и Шут", Album = "Акустический альбом", Date = 1998, Durations = TimeSpan.FromMinutes(3.23)},
                 new Music{SongName = "МАЛИНОВАЯ ЛАДА", SongerName = "GAYAZOV$ BROTHER$", Album = "МАЛИНОВАЯ ЛАДА", Date = 2021, Durations = TimeSpan.FromMinutes(3.33)},
@@ -72,7 +71,7 @@ namespace L_P
                 new Podcast{PodcastName = "Danza Kuduro", PodcasterName = "Don Lore V", Date = 2014, Duration = TimeSpan.FromMinutes(3.19)},
             };
             Podcasts[0].SetPodcastFile("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Podcasts\\Don_Omar_-_Danza_Kuduro_28587730.mp3");
-            Accords = new ObservableCollection<Accords>() 
+            Accords = new ObservableCollection<Accords>()
             {
                 new Accords{AccordName = "Король и шут - Кукла колдуна"},
                 new Accords{AccordName = "Imagine Dragons - Demons"},
@@ -84,7 +83,7 @@ namespace L_P
 
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += (sender, e) => CurrentPosition = mediaPlayer.Position;        
+            timer.Tick += (sender, e) => CurrentPosition = mediaPlayer.Position;
             timer.Start();
             DispatcherTimer musicTimer = new DispatcherTimer();
             musicTimer.Interval = TimeSpan.FromSeconds(1);
@@ -119,9 +118,8 @@ namespace L_P
                                     Album = file.Tag.Album,
                                     Date = (int)file.Tag.Year,
                                     Durations = TimeSpan.FromSeconds(file.Properties.Duration.TotalSeconds),
-                                    MusicFile = new FileStream(fileName, FileMode.Open)
+                                    MusicFile = new FileStream(fileName, FileMode.Open),
                                 };
-
                                 Music.Add(music);
                             }
                             catch (Exception ex)
@@ -197,7 +195,7 @@ namespace L_P
                         {
                             try
                             {
-                                string title = File.ReadAllText(fileName);
+                                string title = System.IO.File.ReadAllText(fileName);
                                 Accords accords = new Accords
                                 {
                                     AccordName = Path.GetFileNameWithoutExtension(fileName),
@@ -396,7 +394,7 @@ namespace L_P
                 });
             }
         }
-       private bool isDarkTheme;
+        private bool isDarkTheme;
 
         public bool IsDarkTheme
         {

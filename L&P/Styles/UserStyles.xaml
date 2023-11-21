@@ -41,7 +41,7 @@
                 </BeginStoryboard>
             </EventTrigger>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#3A2AEB"/>
+                <Setter Property="Background"  Value="#FFA50303"/>
                 <Setter Property="Button.Effect">
                     <Setter.Value>
                         <DropShadowEffect Color="Black" Direction="320" ShadowDepth="5"/>

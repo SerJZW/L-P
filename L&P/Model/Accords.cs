@@ -31,8 +31,7 @@ namespace L_P.Model
         {
             try
             {
-                string fileContent = File.ReadAllText(filePath);
-                AccordFileText = fileContent;
+                AccordFileText = File.ReadAllText(filePath);
             }
             catch (Exception ex)
             {
