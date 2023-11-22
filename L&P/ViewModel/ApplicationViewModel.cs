@@ -39,10 +39,12 @@ namespace L_P
                 if (selectedAudio is Music music)
                 {
                     currentTrackIndex = Music.IndexOf(music);
+                    PlayCommand.Execute(selectedAudio);
                 }
                 else if (selectedAudio is Podcast podcast)
                 {
                     currentTrackIndex = Podcasts.IndexOf(podcast);
+                    PlayCommand.Execute(selectedAudio);
                 }
             }
         }
@@ -64,20 +66,20 @@ namespace L_P
                 new Music{SongName = "Кукла Колдуна", SongerName = "Король и Шут", Album = "Акустический альбом", Date = 1998, Durations = TimeSpan.FromMinutes(3.23)},
                 new Music{SongName = "МАЛИНОВАЯ ЛАДА", SongerName = "GAYAZOV$ BROTHER$", Album = "МАЛИНОВАЯ ЛАДА", Date = 2021, Durations = TimeSpan.FromMinutes(3.33)},
             };
-            Music[0].SetMusicFile("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Musics\\Korol_i_SHut_-_Kukla_kolduna_62570545.mp3");
-            Music[1].SetMusicFile("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Musics\\GAYAZOV_BROTHER_-_MALINOVAYA_LADA_73214200.mp3");
+            Music[0].SetMusicFile("C:\\Users\\zemzh\\source\\repos\\L-P\\L&P\\Source\\Musics\\Korol_i_SHut_-_Kukla_kolduna_62570545.mp3");
+            Music[1].SetMusicFile("C:\\Users\\zemzh\\source\\repos\\L-P\\L&P\\Source\\Musics\\GAYAZOV_BROTHER_-_MALINOVAYA_LADA_73214200.mp3");
             Podcasts = new ObservableCollection<Podcast>()
             {
                 new Podcast{PodcastName = "Danza Kuduro", PodcasterName = "Don Lore V", Date = 2014, Duration = TimeSpan.FromMinutes(3.19)},
             };
-            Podcasts[0].SetPodcastFile("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Podcasts\\Don_Omar_-_Danza_Kuduro_28587730.mp3");
+            Podcasts[0].SetPodcastFile("C:\\Users\\zemzh\\source\\repos\\L-P\\L&P\\Source\\Podcasts\\Don_Omar_-_Danza_Kuduro_28587730.mp3");
             Accords = new ObservableCollection<Accords>()
             {
                 new Accords{AccordName = "Король и шут - Кукла колдуна"},
                 new Accords{AccordName = "Imagine Dragons - Demons"},
             };
-            Accords[0].SetAccordFile("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Accords\\Король и шут - Кукла Колдуна.txt");
-            Accords[1].SetAccordFile("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Accords\\Imagine Dragons - Demons.txt");
+            Accords[0].SetAccordFile("C:\\Users\\zemzh\\Source\\Repos\\L-P\\L&P\\Source\\Accords\\Король и шут - Кукла Колдуна.txt");
+            Accords[1].SetAccordFile("C:\\Users\\zemzh\\source\\repos\\L-P\\L&P\\Source\\Accords\\Imagine Dragons - Demons.txt");
 
             ContentSwitch = new ContentSwitch();
 
@@ -89,6 +91,9 @@ namespace L_P
             musicTimer.Interval = TimeSpan.FromSeconds(1);
             musicTimer.Tick += (sender, e) => _CurrentPosition = mediaPlayer.Position.TotalSeconds / 2;
             musicTimer.Start();
+            OnPropertyChanged("IsDarkTheme");
+            WindowStyle = IsDarkTheme ? Application.Current.FindResource("DarkWindowStyle") as Style : Application.Current.FindResource("LightWindowStyle") as Style;
+            UserControlStyle = IsDarkTheme ? Application.Current.FindResource("DarkUC") as Style : Application.Current.FindResource("LightUC") as Style;
         }
 
         #region AddCommandRealisations
@@ -231,33 +236,44 @@ namespace L_P
                 {
                     if (SelectedAudio != null)
                     {
-                        if (isPlaying)
+                        if (SelectedAudio is Music)
                         {
-                            lastPosition = mediaPlayer.Position;
-                            mediaPlayer.Pause();
-                            isPlaying = false;
+                            mediaPlayer.Open(new Uri((SelectedAudio as Music).MusicFile.Name));
                         }
-                        else
+                        else if (SelectedAudio is Podcast)
                         {
-                            if (SelectedAudio is Music)
-                            {
-                                mediaPlayer.Open(new Uri((SelectedAudio as Music).MusicFile.Name));
-                            }
-                            else if (SelectedAudio is Podcast)
-                            {
-                                mediaPlayer.Open(new Uri((SelectedAudio as Podcast).PodcastFile.Name));
-                            }
-
-                            if (lastPosition.HasValue)
-                            {
-                                mediaPlayer.Position = lastPosition.Value;
-                            }
-
-                            mediaPlayer.Play();
-
-                            isPlaying = true;
-
+                            mediaPlayer.Open(new Uri((SelectedAudio as Podcast).PodcastFile.Name));
                         }
+
+                        if (lastPosition.HasValue)
+                        {
+                            mediaPlayer.Position = lastPosition.Value;
+                        }
+
+                        mediaPlayer.Play();
+
+                        isPlaying = true;
+                    }
+                }));
+            }
+        }
+        public RelayCommand PauseCommand
+        {
+            get
+            {
+                return (new RelayCommand(obj =>
+                {
+                    if (isPlaying)
+                    {
+                        lastPosition = mediaPlayer.Position;
+                        
+                        mediaPlayer.Pause();
+                        isPlaying = false;
+                    }
+                    else
+                    {
+                        mediaPlayer.Play();
+                        isPlaying = true;
                     }
                 }));
             }
@@ -383,7 +399,6 @@ namespace L_P
                 }
             }
         }
-
         public RelayCommand ThemeChange
         {
             get

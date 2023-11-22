@@ -43,8 +43,9 @@
                         </Style>
                     </ListView.ItemContainerStyle>
                     <ListView.View>
-                        <GridView>
-                            <GridViewColumn Header="Композиция" 
+                        <GridView AllowsColumnReorder="False">
+                            <GridViewColumn
+                                Header="Композиция" 
                                             Width="250" 
                                             HeaderContainerStyle="{StaticResource GridViewColumnStyle}"
                                             DisplayMemberBinding="{Binding Path = SongName}"/>

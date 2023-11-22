@@ -7,7 +7,7 @@
         xmlns:UserControls ="clr-namespace:L_P.View"
         mc:Ignorable="d"
         Title="LaP" Icon="/Source/Image/Logo.png"       
-        MinWidth="1280px" MinHeight="700px" Style="{Binding WindowStyle}" DataContext="{Binding StyleSwitcher}" >
+        MinWidth="1280px" MinHeight="600px" Style="{Binding WindowStyle}" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -16,18 +16,19 @@
         </Grid.RowDefinitions>
         <Viewbox Grid.Row="0">
             <DockPanel  Grid.Row="0">
-                <Border CornerRadius="0,0,15,15" 
-                    BorderBrush="Black" 
-                    BorderThickness="1" 
+                <Border CornerRadius="0,0,15,15"
+                    Margin="0,5,0,0"    
+                    BorderBrush="DarkRed" 
+                    BorderThickness="2" 
                     DockPanel.Dock="Top">
                     <DockPanel Name="Header" DataContext="{Binding ContentSwitch}">
                         <TextBlock Text="LaP" 
-                       Style="{StaticResource TextBlockReg}"
-                       HorizontalAlignment="Left"
-                       FontFamily="Gabriola"
-                       FontStyle="Italic"
-                       Height="120px"
-                       Width="130"/>
+                                   Style="{StaticResource TextBlockReg}"
+                                   HorizontalAlignment="Left"
+                                   FontFamily="Gabriola"
+                                   FontStyle="Italic"
+                                   Height="120px"
+                                   Width="130"/>
                         <Button Content="Главная" 
                                 Name="MainView" 
                                 Style="{StaticResource ButtonMenuStyle}"
@@ -83,15 +84,15 @@
                         <Button Name="Back" Command="{Binding PreviousTrackCommand}" Style="{StaticResource PlayerButtons}">
                             <Image Source="/Source/UI_Icon/Back.png"/>
                         </Button>
-                        <ToggleButton Style="{StaticResource PlayStyle}" Name="PlayButton" Command="{Binding PlayCommand}" Width="50">
+                        <ToggleButton Style="{StaticResource PlayStyle}" Name="PlayButton" Command="{Binding PauseCommand}" Width="50" Cursor="Hand">
                             <ToggleButton.Content>
                                 <Image x:Name="PlayImage">
                                     <Image.Style>
                                         <Style TargetType="Image">
-                                            <Setter Property="Source" Value="/Source/UI_Icon/Play.png" />
+                                            <Setter Property="Source" Value="/Source/UI_Icon/Pause.png" />
                                             <Style.Triggers>
                                                 <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource AncestorType={x:Type ToggleButton}}}" Value="True">
-                                                    <Setter Property="Source" Value="/Source/UI_Icon/Pause.png" />
+                                                    <Setter Property="Source" Value="/Source/UI_Icon/Play.png" />
                                                 </DataTrigger>
                                             </Style.Triggers>
                                         </Style>

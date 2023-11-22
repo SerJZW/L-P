@@ -116,7 +116,7 @@
     
     <Style x:Key="GridViewColumnStyle" TargetType="GridViewColumnHeader">
         <Setter Property="Margin" Value="1,0,1,0"/>
-        <Setter Property="Background" Value="White"/>
+        <Setter Property="Background" Value="#FAF0E6"/>
         <Setter Property="FontSize" Value="16pt"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -130,7 +130,7 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="White"/>
+                            <Setter TargetName="border" Property="Background" Value="#FAF0E6"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -140,7 +140,7 @@
     
     <Style x:Key="GridViewColumnStyle2" TargetType="GridViewColumnHeader">
         <Setter Property="Margin" Value="1,0,1,0"/>
-        <Setter Property="Background" Value="White"/>
+        <Setter Property="Background" Value="#FAF0E6"/>
         <Setter Property="FontSize" Value="16pt"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -154,7 +154,7 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="White"/>
+                            <Setter TargetName="border" Property="Background" Value="#FAF0E6"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -164,7 +164,7 @@
 
     <Style x:Key="GridViewColumnStyle3" TargetType="GridViewColumnHeader">
         <Setter Property="Margin" Value="1,0,1,0"/>
-        <Setter Property="Background" Value="White"/>
+        <Setter Property="Background" Value="#FAF0E6"/>
         <Setter Property="FontSize" Value="16pt"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -178,7 +178,7 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="White"/>
+                            <Setter TargetName="border" Property="Background" Value="#FAF0E6"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -209,7 +209,7 @@
         </Setter>
     </Style>
     <Style x:Key="RichTextStyle" TargetType="RichTextBox">
-        <Setter Property="Background" Value="White"/>
+        <Setter Property="Background" Value="#FFF5EE"/>
         <Setter Property="IsReadOnly" Value="True"/>
         <Setter Property="Height" Value="200"/>
         <Setter Property="Width" Value="900"/>

@@ -14,8 +14,9 @@
         </Grid.RowDefinitions>
         <Viewbox Grid.Row="0" Margin="30,30,30,0">
             <Border BorderThickness="3,3,3,3"
-                    BorderBrush="Black"
-                    CornerRadius="30">
+                    BorderBrush="DarkRed"
+                    CornerRadius="30"
+>
                 <DockPanel>
                     <TextBlock Width="130"
                     Height="130"

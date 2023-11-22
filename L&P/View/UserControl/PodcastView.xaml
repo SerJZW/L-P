@@ -15,12 +15,21 @@
         <Viewbox Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
             <StackPanel Grid.Row="1" Orientation="Vertical">
                 <TextBlock Text="Подкасты" Style="{StaticResource TBStyle}"/>
+                <TextBox HorizontalAlignment="Right"
+                         Margin="0,-50,105,20" 
+                         Width="165" 
+                         Height="20" 
+                         Text="Поиск..."
+                         BorderThickness="1"
+                         BorderBrush="Black"
+                         Style="{StaticResource TextBoxStyle}"/>
                 <ListView Style="{StaticResource ListStyle}" SelectedItem="{Binding SelectedAudio}" ItemsSource="{Binding Podcasts}" Margin="108,0,100,0">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="{x:Type ListViewItem}">
                             <Setter Property="Background" Value="White"/>
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                             <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="Width" Value="980"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter Property="Background" Value="Gray"/>
@@ -34,7 +43,7 @@
                         </Style>
                     </ListView.ItemContainerStyle>
                     <ListView.View>
-                        <GridView>
+                        <GridView AllowsColumnReorder="False">
                             <GridViewColumn Header="Название" 
                                             Width="250" 
                                             DisplayMemberBinding="{Binding Path=PodcastName}" 
