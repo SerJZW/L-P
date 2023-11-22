@@ -19,10 +19,12 @@
                          Margin="0,-50,105,20" 
                          Width="165" 
                          Height="20" 
-                         Text="Поиск"
+                         Text="{Binding SearchViewModel.SearchText, UpdateSourceTrigger=PropertyChanged}"
                          BorderThickness="1"
                          BorderBrush="Black"
-                         Style="{StaticResource TextBoxStyle}"/>
+                         Style="{StaticResource TextBoxStyle}">     
+                   
+                </TextBox>
                 <ListView ItemsSource="{Binding Music}" SelectedItem="{Binding AudioPlayer.SelectedAudio}" Style="{StaticResource ListStyle}" Margin="108,0,100,0" >
                     <ListView.ItemContainerStyle>
                         <Style TargetType="{x:Type ListViewItem}">

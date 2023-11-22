@@ -13,10 +13,13 @@ namespace L_P
         public StyleSwitcher StyleSwitch { get; set; }
         public AddViewModel AddCommand { get; set; }
         public AudioPlayer AudioPlayer { get; set; }
+        public SearchViewModel SearchViewModel { get; set; }
         #endregion
         public ObservableCollection<Music> Music { get; set; }
         public ObservableCollection<Accords> Accords { get; set; }
         public ObservableCollection<Podcast> Podcasts { get; set; }
+       
+
 
         public ApplicationViewModel()
         {
@@ -26,7 +29,7 @@ namespace L_P
                 new Music{SongName = "МАЛИНОВАЯ ЛАДА", SongerName = "GAYAZOV$ BROTHER$", Album = "МАЛИНОВАЯ ЛАДА", Date = 2021, Durations = TimeSpan.FromMinutes(3.33)},
             };
             Music[0].SetMusicFile("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Musics\\Korol_i_SHut_-_Kukla_kolduna_62570545.mp3");
-            Music[1].SetMusicFile("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Musics\\GAYAZOV_BROTHER_-_MALINOVAYA_LADA_73214200.mp3");
+            Music[1].SetMusicFile("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Musics\\GAYAZOV_BROTHER_-_MALINOVAYA_LADA_73214200.mp3");    
             Podcasts = new ObservableCollection<Podcast>()
             {
                 new Podcast{PodcastName = "Danza Kuduro", PodcasterName = "Don Lore V", Date = 2014, Duration = TimeSpan.FromMinutes(3.19)},
@@ -41,8 +44,10 @@ namespace L_P
             Accords[1].SetAccordFile("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Accords\\Imagine Dragons - Demons.txt");
             AudioPlayer = new AudioPlayer(this);
             AddCommand = new AddViewModel(this);
+            SearchViewModel = new SearchViewModel(this);
             ContentSwitch = new ContentSwitch();
             StyleSwitch = new StyleSwitcher();
+
         }
     }
 }

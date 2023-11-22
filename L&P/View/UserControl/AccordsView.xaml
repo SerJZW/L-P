@@ -19,7 +19,7 @@
                          Margin="0,-50,105,20" 
                          Width="165" 
                          Height="20" 
-                         Text="Поиск..."
+                         Text="{Binding SearchViewModel.SearchTextAccords, UpdateSourceTrigger=PropertyChanged}"
                          BorderThickness="1"
                          BorderBrush="Black"
                          Style="{StaticResource TextBoxStyle}"/>
