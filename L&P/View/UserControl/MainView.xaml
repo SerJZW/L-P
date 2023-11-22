@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:L_P.View"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1920"
-             Style="{Binding UserControlStyle}">
+             Style="{Binding StyleSwitch.UserControlStyle}">
     <Grid>
         <Viewbox Grid.Row="1">
             <DockPanel Grid.Row="1" Style="{StaticResource FadeInStyle}">

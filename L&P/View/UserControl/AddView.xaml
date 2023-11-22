@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:L_P.View"
              mc:Ignorable="d"         
-             Style="{Binding UserControlStyle}"
+             Style="{Binding StyleSwitch.UserControlStyle}"
              d:DesignHeight="1080" d:DesignWidth="1920">
     <Grid>
         <Grid.RowDefinitions>
@@ -40,7 +40,7 @@
                             VerticalAlignment="Bottom"
                             Content="Музыка"                          
                             Style="{StaticResource ButtonUserStyle}"
-                            Command="{Binding SearchMusicCommand}">
+                            Command="{Binding AddCommand.SearchMusicCommand}">
                         </Button>
                     </StackPanel>
                 </Border>
@@ -57,7 +57,7 @@
                     VerticalAlignment="Bottom"
                     Content="Подкаст"
                     Style="{StaticResource ButtonUserStyle}"
-                    Command="{Binding SearchPodcastCommand}">
+                    Command="{Binding AddCommand.SearchPodcastCommand}">
                         </Button>
                     </StackPanel>
                 </Border>
@@ -74,7 +74,7 @@
                     VerticalAlignment="Bottom"
                     FontSize="17pt"
                     Style="{StaticResource ButtonUserStyle}"
-                    Command="{Binding SearchAccordsCommand}">
+                    Command="{Binding AddCommand.SearchAccordsCommand}">
                             <TextBlock TextWrapping="Wrap" Text="Аккорды" />
                         </Button>
                     </StackPanel>

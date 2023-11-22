@@ -196,6 +196,7 @@
                 <Setter Property="CornerRadius" Value="10"/>
             </Style>
         </Style.Resources>
+        
     </Style>
     <Style x:Key="SliderStyle" TargetType="Slider">
         <Setter Property="Template">

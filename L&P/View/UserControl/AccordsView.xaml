@@ -5,14 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:L_P.View"
              mc:Ignorable="d"
-             Style="{Binding UserControlStyle}"
-         
+             Style="{Binding StyleSwitch.UserControlStyle}"        
              MinWidth="1280px" MinHeight="900px">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="6*"/>
-
         </Grid.RowDefinitions>
         <Viewbox Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top">
             <StackPanel Grid.Row="1" Orientation="Vertical">
@@ -25,13 +23,27 @@
                          BorderThickness="1"
                          BorderBrush="Black"
                          Style="{StaticResource TextBoxStyle}"/>
-                <ListView Style="{StaticResource ListStyle}" ItemsSource="{Binding Accords}" MaxHeight="100" SelectedItem="{Binding SelectedAccords}" Margin="108,0,100,0">
+                <ListView Style="{StaticResource ListStyle}" ItemsSource="{Binding Accords}" MaxHeight="100" SelectedItem="{Binding AudioPlayer.SelectedAccords}" Margin="108,0,100,0">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="{x:Type ListViewItem}">
                             <Setter Property="Background" Value="White"/>
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                             <Setter Property="VerticalAlignment" Value="Center"/>
-                            <Setter Property="Width" Value="1420"/>
+                            <Setter Property="Width" Value="1440"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                        <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                                Background="{TemplateBinding Background}"
+                                                CornerRadius="10">
+                                            <GridViewRowPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter Property="Background" Value="Gray"/>
@@ -58,7 +70,7 @@
                     Style="{StaticResource RichTextStyle}">
                     <FlowDocument>
                         <Paragraph>
-                            <Run Text="{Binding SelectedAccords.AccordFileText}" FontWeight="Bold" FontSize="10" />
+                            <Run Text="{Binding AudioPlayer.SelectedAccords.AccordFileText}" FontWeight="Bold" FontSize="10" />
                         </Paragraph>
                     </FlowDocument>
                 </RichTextBox>

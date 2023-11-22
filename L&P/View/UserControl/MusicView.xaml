@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:Height="1080px" d:Width="1920px" 
              MinWidth="1280px" MinHeight="900px"             
-             Style="{Binding UserControlStyle}">
+             Style="{Binding StyleSwitch.UserControlStyle}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="6*"/>
@@ -19,17 +19,31 @@
                          Margin="0,-50,105,20" 
                          Width="165" 
                          Height="20" 
-                         Text="Поиск..."
+                         Text="Поиск"
                          BorderThickness="1"
                          BorderBrush="Black"
                          Style="{StaticResource TextBoxStyle}"/>
-                <ListView ItemsSource="{Binding Music}" SelectedItem="{Binding SelectedAudio}" Style="{StaticResource ListStyle}" Margin="108,0,100,0">
+                <ListView ItemsSource="{Binding Music}" SelectedItem="{Binding AudioPlayer.SelectedAudio}" Style="{StaticResource ListStyle}" Margin="108,0,100,0" >
                     <ListView.ItemContainerStyle>
                         <Style TargetType="{x:Type ListViewItem}">
                             <Setter Property="Background" Value="White"/>
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                             <Setter Property="VerticalAlignment" Value="Center"/>
-                            <Setter Property="Width" Value="1220"/>
+                            <Setter Property="Width" Value="1240"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                        <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                                Background="{TemplateBinding Background}"
+                                                CornerRadius="10">
+                                            <GridViewRowPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter Property="Background" Value="Gray"/>
@@ -58,7 +72,7 @@
                                             HeaderContainerStyle="{StaticResource GridViewColumnStyle2}" 
                                             DisplayMemberBinding="{Binding Path = Album}"/>
                             <GridViewColumn Header="Год"
-                                            Width="250" 
+                                            Width="250"
                                             HeaderContainerStyle="{StaticResource GridViewColumnStyle2}"
                                             DisplayMemberBinding="{Binding Path = Date}"/>
                             <GridViewColumn Header="Продолжительность"

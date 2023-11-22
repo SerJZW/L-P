@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:L_P.View"
              mc:Ignorable="d"          
               MinWidth="1280px" MinHeight="900px"
-              Style="{Binding UserControlStyle}">
+              Style="{Binding StyleSwitch.UserControlStyle}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -35,7 +35,7 @@
                            FontSize="40pt"/>
                         <CheckBox HorizontalAlignment="Right"
                               VerticalAlignment="Center"
-                              IsChecked="{Binding IsDarkTheme, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                              IsChecked="{Binding StyleSwitch.IsDarkTheme, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
                               Margin="0,0,10,0"                            
                               Style="{StaticResource CircleCheckbox}">
                             <CheckBox.LayoutTransform>

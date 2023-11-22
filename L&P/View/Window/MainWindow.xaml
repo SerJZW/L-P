@@ -7,7 +7,7 @@
         xmlns:UserControls ="clr-namespace:L_P.View"
         mc:Ignorable="d"
         Title="LaP" Icon="/Source/Image/Logo.png"       
-        MinWidth="1280px" MinHeight="600px" Style="{Binding WindowStyle}" >
+        MinWidth="1280px" MinHeight="600px" Style="{Binding StyleSwitch.WindowStyle}" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -81,10 +81,10 @@
                     DockPanel.Dock="Bottom"
                     Margin="5,0,5,0">
                     <DockPanel Name="Footer">
-                        <Button Name="Back" Command="{Binding PreviousTrackCommand}" Style="{StaticResource PlayerButtons}">
+                        <Button Name="Back" Command="{Binding AudioPlayer.PreviousTrackCommand}" Style="{StaticResource PlayerButtons}">
                             <Image Source="/Source/UI_Icon/Back.png"/>
                         </Button>
-                        <ToggleButton Style="{StaticResource PlayStyle}" Name="PlayButton" Command="{Binding PauseCommand}" Width="50" Cursor="Hand">
+                        <ToggleButton Style="{StaticResource PlayStyle}" Name="PlayButton" Command="{Binding AudioPlayer.PauseCommand}" Width="50" Cursor="Hand">
                             <ToggleButton.Content>
                                 <Image x:Name="PlayImage">
                                     <Image.Style>
@@ -100,18 +100,18 @@
                                 </Image>
                             </ToggleButton.Content>
                         </ToggleButton>
-                        <Button Name="Next" Command="{Binding NextTrackCommand}" Style="{StaticResource PlayerButtons}">
+                        <Button Name="Next" Command="{Binding AudioPlayer.NextTrackCommand}" Style="{StaticResource PlayerButtons}">
                             <Image Source="/Source/UI_Icon/Next.png"/>
                         </Button>
-                        <TextBlock Text="{Binding CurrentPosition, StringFormat=mm\\:ss}"
+                        <TextBlock Text="{Binding AudioPlayer.CurrentPosition, StringFormat=mm\\:ss}"
                                    TextAlignment="Center"
                                    Width="100"
                                    HorizontalAlignment="Center" 
                                    VerticalAlignment="Center"
                                    FontSize="20pt"
-                                   Margin="10,0,0,0"/>
-                        <Slider  Minimum="0" Maximum="100" Value="{Binding _CurrentPosition}" Style="{StaticResource SliderStyle}" Height="30px" Width="1200" HorizontalAlignment="Left" Margin="20,0,20,0"/>
-                        <Slider Value="{Binding Volume}" Style="{StaticResource SliderStyle}" Minimum="0" Maximum="1" Height="30px" Width="150" HorizontalAlignment="Right" Margin="0,0,30,0"/>
+                                   Margin="10,0,0,0" Cursor=""/>
+                        <Slider  Minimum="0" Maximum="100" Value="{Binding AudioPlayer._CurrentPosition}" Style="{StaticResource SliderStyle}" Height="30px" Width="1200" HorizontalAlignment="Left" Margin="20,0,20,0"/>
+                        <Slider Value="{Binding AudioPlayer.Volume}" Style="{StaticResource SliderStyle}" Minimum="0" Maximum="1" Height="30px" Width="150" HorizontalAlignment="Right" Margin="0,0,30,0"/>
                     </DockPanel>
                 </Border>
             </DockPanel>
