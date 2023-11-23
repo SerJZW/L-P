@@ -11,9 +11,9 @@ namespace L_P.ViewModel
     public class SearchViewModel : Notify
     {
         private ApplicationViewModel app;
-        public ObservableCollection<Music> originalMusicList;
-        public ObservableCollection<Podcast> originalPodcastList;
-        public ObservableCollection<Accords> originalAccordsList;
+        public ObservableCollection<Music> originalMusicList { get; set; }
+        public ObservableCollection<Podcast> originalPodcastList { get; set; }
+        public ObservableCollection<Accords> originalAccordsList { get; set; }
         public SearchViewModel(ApplicationViewModel applicationViewModel)
         {
             app = applicationViewModel;
@@ -142,7 +142,6 @@ namespace L_P.ViewModel
                     }
                     else
                     {
-
                         var filteredMusic = originalAccordsList.Where(m => m.AccordName.Contains(SearchTextAccords)).ToList();
                         app.Accords.Clear();
                         foreach (var accords in filteredMusic)

@@ -43,7 +43,7 @@ namespace L_P
             Accords[0].SetAccordFile("C:\\Users\\zemzh\\Source\\Repos\\L&P\\L&P\\Source\\Accords\\Король и шут - Кукла Колдуна.txt");
             Accords[1].SetAccordFile("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Accords\\Imagine Dragons - Demons.txt");
             AudioPlayer = new AudioPlayer(this);
-            AddCommand = new AddViewModel(this);
+            AddCommand = new AddViewModel(this, SearchViewModel);
             SearchViewModel = new SearchViewModel(this);
             ContentSwitch = new ContentSwitch();
             StyleSwitch = new StyleSwitcher();
