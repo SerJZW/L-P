@@ -17,12 +17,10 @@ namespace L_P.ViewModel
     public class AddViewModel
     {
         private ApplicationViewModel app;
-        private SearchViewModel search;
 
-        public AddViewModel(ApplicationViewModel applicationViewModel, SearchViewModel searchViewModel)
+        public AddViewModel(ApplicationViewModel applicationViewModel)
         {
-            app = applicationViewModel;
-            search = searchViewModel;
+            app = applicationViewModel;  
         }
 
         private OpenFileDialog openDialog = new OpenFileDialog();
@@ -54,7 +52,7 @@ namespace L_P.ViewModel
                                     MusicFile = new FileStream(fileName, FileMode.Open),
                                 };
                                 app.Music.Add(music);
-                                search.originalMusicList.Add(music);
+
                             }
                             catch (Exception ex)
                             {
@@ -97,7 +95,6 @@ namespace L_P.ViewModel
                                 };
 
                                 app.Podcasts.Add(podcast);
-                                search.originalPodcastList.Add(podcast);
                             }
                             catch (Exception ex)
                             {
@@ -137,7 +134,6 @@ namespace L_P.ViewModel
                                     AccordFileText = title
                                 };
                                 app.Accords.Add(accords);
-                                search.originalAccordsList.Add(accords);
                             }
                             catch (Exception ex)
                             {

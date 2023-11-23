@@ -44,18 +44,5 @@ namespace L_P.Model
             get { return musicFile; }
             set { musicFile = value; OnPropertyChanged("MusicFile"); }
         }
-
-        public void SetMusicFile(string filePath)
-        {
-            try
-            {
-                FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
-                MusicFile = fileStream;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Ошибка при открытии музыкального файла: {ex.Message}");
-            }
-        }
     }
 }
