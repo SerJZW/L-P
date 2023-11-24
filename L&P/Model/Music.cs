@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace L_P.Model
@@ -13,7 +14,13 @@ namespace L_P.Model
         private int date;
         private TimeSpan durations;
         private FileStream? musicFile;
+        private BitmapImage? musicImage;
 
+        public BitmapImage? MusicImage
+        {
+            get { return musicImage; }
+            set { musicImage = value; OnPropertyChanged("MusicImage"); }
+        }
         public string? SongName
         {
             get { return songName; }

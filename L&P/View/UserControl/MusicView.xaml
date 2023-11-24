@@ -22,16 +22,15 @@
                          Text="{Binding SearchViewModel.SearchText, UpdateSourceTrigger=PropertyChanged}"
                          BorderThickness="1"
                          BorderBrush="Black"
-                         Style="{StaticResource TextBoxStyle}">     
-                   
+                         Style="{StaticResource TextBoxStyle}">
+
                 </TextBox>
-                <ListView ItemsSource="{Binding Music}" SelectedItem="{Binding AudioPlayer.SelectedAudio}" Style="{StaticResource ListStyle}" Margin="108,0,100,0" >
+                <ListView ItemsSource="{Binding Music}" MaxHeight="530" SelectedItem="{Binding AudioPlayer.SelectedAudio}" Style="{StaticResource ListStyle}" Margin="108,0,100,0" >
                     <ListView.ItemContainerStyle>
                         <Style TargetType="{x:Type ListViewItem}">
                             <Setter Property="Background" Value="White"/>
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                             <Setter Property="VerticalAlignment" Value="Center"/>
-                            <Setter Property="Width" Value="1240"/>
                             <Setter Property="Template">
                                 <Setter.Value>
                                     <ControlTemplate TargetType="{x:Type ListViewItem}">
@@ -59,12 +58,17 @@
                         </Style>
                     </ListView.ItemContainerStyle>
                     <ListView.View>
-                        <GridView AllowsColumnReorder="False">
-                            <GridViewColumn
-                                Header="Композиция" 
-                                            Width="250" 
-                                            HeaderContainerStyle="{StaticResource GridViewColumnStyle}"
-                                            DisplayMemberBinding="{Binding Path = SongName}"/>
+                        <GridView AllowsColumnReorder="False" >
+                            <GridViewColumn Header="Композиция" Width="250" HeaderContainerStyle="{StaticResource GridViewColumnStyle}">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="{Binding MusicImage}" Margin="6" Width="50" Height="50"/>
+                                            <TextBlock Text="{Binding SongName}" FontSize="15" Margin="5,23,0,0"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
                             <GridViewColumn Header="Исполнитель"
                                             Width="250" 
                                             HeaderContainerStyle="{StaticResource GridViewColumnStyle2}"

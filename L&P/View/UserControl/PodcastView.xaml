@@ -23,7 +23,7 @@
                          BorderThickness="1"
                          BorderBrush="Black"
                          Style="{StaticResource TextBoxStyle}"/>
-                <ListView Style="{StaticResource ListStyle}" SelectedItem="{Binding AudioPlayer.SelectedAudio}" ItemsSource="{Binding Podcasts}" Margin="108,0,100,0">
+                <ListView Style="{StaticResource ListStyle}" MaxHeight="400" SelectedItem="{Binding AudioPlayer.SelectedAudio}" ItemsSource="{Binding Podcasts}" Margin="108,0,100,0">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="{x:Type ListViewItem}">
                             <Setter Property="Background" Value="White"/>
@@ -58,10 +58,16 @@
                     </ListView.ItemContainerStyle>
                     <ListView.View>
                         <GridView AllowsColumnReorder="False">
-                            <GridViewColumn Header="Название" 
-                                            Width="250" 
-                                            DisplayMemberBinding="{Binding Path=PodcastName}" 
-                                            HeaderContainerStyle="{StaticResource GridViewColumnStyle}"/>
+                            <GridViewColumn Header="Композиция" Width="250" HeaderContainerStyle="{StaticResource GridViewColumnStyle}">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="{Binding PodcastImage}" Margin="6" Width="50" Height="50"/>
+                                            <TextBlock Text="{Binding PodcastName}" FontSize="15" Margin="5,23,0,0"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
                             <GridViewColumn Header="Автор" 
                                             Width="250" 
                                             DisplayMemberBinding="{Binding Path=PodcasterName}"

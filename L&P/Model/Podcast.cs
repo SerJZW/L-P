@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Windows.Media.Imaging;
 
 namespace L_P.Model
 {
@@ -10,7 +11,13 @@ namespace L_P.Model
         private int date;
         private TimeSpan duration;
         private FileStream? podcastFile;
+        private BitmapImage? podcastImage;
 
+        public BitmapImage? PodcastImage
+        {
+            get { return podcastImage; }
+            set { podcastImage = value; OnPropertyChanged("PodcastImage"); }
+        }
         public string? PodcastName
         {
             get { return podcastName; }

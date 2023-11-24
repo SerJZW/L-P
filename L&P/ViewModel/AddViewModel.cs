@@ -1,16 +1,12 @@
 ﻿
 using L_P.Model;
 using L_P.Model.Event;
-using L_P.ViewModel;
-using System.IO;
-using System.Windows;
 using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections.ObjectModel;
+using System.IO;
+using System.Windows;
+using System.Windows.Media.Imaging;
+using TagLib;
 
 namespace L_P.ViewModel
 {
@@ -20,7 +16,7 @@ namespace L_P.ViewModel
 
         public AddViewModel(ApplicationViewModel applicationViewModel)
         {
-            app = applicationViewModel;  
+            app = applicationViewModel;
         }
 
         private OpenFileDialog openDialog = new OpenFileDialog();
@@ -51,6 +47,21 @@ namespace L_P.ViewModel
                                     Durations = TimeSpan.FromSeconds(file.Properties.Duration.TotalSeconds),
                                     MusicFile = new FileStream(fileName, FileMode.Open),
                                 };
+                                if (file.Tag.Pictures != null && file.Tag.Pictures.Length > 0)
+                                {
+                                    IPicture picture = file.Tag.Pictures[0];
+
+                                    using (MemoryStream memoryStream = new MemoryStream(picture.Data.Data))
+                                    {
+                                        BitmapImage bitmapImage = new BitmapImage();
+                                        bitmapImage.BeginInit();
+                                        bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                                        bitmapImage.StreamSource = memoryStream;
+                                        bitmapImage.EndInit();
+
+                                        music.MusicImage = bitmapImage;
+                                    }
+                                }
                                 app.Music.Add(music);
 
                             }
@@ -59,6 +70,7 @@ namespace L_P.ViewModel
                                 MessageBox.Show($"Ошибка при обработке файла: {ex.Message}");
                             }
                         }
+
                     }
                     else
                     {
@@ -93,7 +105,21 @@ namespace L_P.ViewModel
                                     Duration = TimeSpan.FromSeconds(file.Properties.Duration.TotalSeconds),
                                     PodcastFile = new FileStream(fileName, FileMode.Open)
                                 };
+                                if (file.Tag.Pictures != null && file.Tag.Pictures.Length > 0)
+                                {
+                                    IPicture picture = file.Tag.Pictures[0];
 
+                                    using (MemoryStream memoryStream = new MemoryStream(picture.Data.Data))
+                                    {
+                                        BitmapImage bitmapImage = new BitmapImage();
+                                        bitmapImage.BeginInit();
+                                        bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                                        bitmapImage.StreamSource = memoryStream;
+                                        bitmapImage.EndInit();
+
+                                        podcast.PodcastImage = bitmapImage;
+                                    }
+                                }
                                 app.Podcasts.Add(podcast);
                             }
                             catch (Exception ex)

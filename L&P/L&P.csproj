@@ -16,6 +16,11 @@
     <None Remove="Source\Image\backgroundsec.jpg" />
     <None Remove="Source\Image\greenDay.jpg" />
     <None Remove="Source\Image\Logo.png" />
+    <None Remove="Source\Musics\3days.jfif" />
+    <None Remove="Source\Musics\Eminem.jpg" />
+    <None Remove="Source\Musics\Malin.jfif" />
+    <None Remove="Source\Musics\Somebody.jfif" />
+    <None Remove="Source\Musics\Киш.jpeg" />
     <None Remove="Source\UI_Icon\AboutApl.png" />
     <None Remove="Source\UI_Icon\Accords.png" />
     <None Remove="Source\UI_Icon\Back.png" />
@@ -38,6 +43,11 @@
     <Resource Include="Source\Image\background.jpg" />
     <Resource Include="Source\Image\backgroundsec.jpg" />
     <Resource Include="Source\Image\greenDay.jpg" />
+    <Resource Include="Source\Musics\3days.jfif" />
+    <Resource Include="Source\Musics\Eminem.jpg" />
+    <Resource Include="Source\Musics\Malin.jfif" />
+    <Resource Include="Source\Musics\Somebody.jfif" />
+    <Resource Include="Source\Musics\Киш.jpeg" />
     <Resource Include="Source\UI_Icon\AboutApl.png" />
     <Resource Include="Source\UI_Icon\Accords.png" />
     <Resource Include="Source\UI_Icon\Back.png" />

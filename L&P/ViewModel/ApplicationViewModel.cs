@@ -3,6 +3,7 @@ using L_P.ViewModel;
 using System;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Windows.Media.Imaging;
 
 namespace L_P
 {
@@ -22,15 +23,15 @@ namespace L_P
         {
             Music = new ObservableCollection<Music>()
             {
-                new Music{SongName = "Кукла Колдуна", SongerName = "Король и Шут", Album = "Акустический альбом", Date = 1998, Durations = TimeSpan.FromMinutes(3.23), MusicFile = new FileStream("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Musics\\Korol_i_SHut_-_Kukla_kolduna_62570545.mp3", FileMode.Open)},
-                new Music{SongName = "МАЛИНОВАЯ ЛАДА", SongerName = "GAYAZOV$ BROTHER$", Album = "МАЛИНОВАЯ ЛАДА", Date = 2021, Durations = TimeSpan.FromMinutes(3.33), MusicFile= new FileStream("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Musics\\GAYAZOV_BROTHER_-_MALINOVAYA_LADA_73214200.mp3", FileMode.Open)},
-                new Music{SongName = "Прощание", SongerName = "Три дня дождя", Album = "melancholia", Date = 2023, Durations = TimeSpan.FromMinutes(3.56), MusicFile= new FileStream("C:\\Users\\zemzh\\Source\\Repos\\L-P\\L&P\\Source\\Musics\\Tri_dnya_dozhdya_-_Proshhanie_76864069.mp3", FileMode.Open)},
-                new Music{SongName = "Mockingbird", SongerName = "Eminem", Album = "Curtain Call", Date = 2005, Durations = TimeSpan.FromMinutes(4.11), MusicFile= new FileStream("C:\\Users\\zemzh\\Source\\Repos\\L-P\\L&P\\Source\\Musics\\Eminem_-_Mockingbird_47829435.mp3", FileMode.Open)},
-                new Music{SongName = "Somebody That I Used To Know", SongerName = "Gotye", Album = "NRJ Hits 17", Date = 2012, Durations = TimeSpan.FromMinutes(4.04), MusicFile= new FileStream("C:\\Users\\zemzh\\Source\\Repos\\L-P\\L&P\\Source\\Musics\\Gotye_-_Somebody_That_I_Used_To_Know_48005012.mp3", FileMode.Open)},
-            };    
+                new Music{SongName = "Кукла Колдуна", SongerName = "Король и Шут", Album = "Акустический альбом", Date = 1998, Durations = TimeSpan.FromMinutes(3.23), MusicFile = new FileStream("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Musics\\Korol_i_SHut_-_Kukla_kolduna_62570545.mp3", FileMode.Open), MusicImage = new BitmapImage(new Uri("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Musics\\Киш.jpeg"))},
+                new Music{SongName = "МАЛИНОВАЯ ЛАДА", SongerName = "GAYAZOV$ BROTHER$", Album = "МАЛИНОВАЯ ЛАДА", Date = 2021, Durations = TimeSpan.FromMinutes(3.33), MusicFile= new FileStream("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Musics\\GAYAZOV_BROTHER_-_MALINOVAYA_LADA_73214200.mp3", FileMode.Open), MusicImage = new BitmapImage(new Uri("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Musics\\Malin.jfif"))},
+                new Music{SongName = "Прощание", SongerName = "Три дня дождя", Album = "melancholia", Date = 2023, Durations = TimeSpan.FromMinutes(3.56), MusicFile= new FileStream("C:\\Users\\zemzh\\Source\\Repos\\L-P\\L&P\\Source\\Musics\\Tri_dnya_dozhdya_-_Proshhanie_76864069.mp3", FileMode.Open), MusicImage = new BitmapImage(new Uri("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Musics\\3days.jfif"))},
+                new Music{SongName = "Mockingbird", SongerName = "Eminem", Album = "Curtain Call", Date = 2005, Durations = TimeSpan.FromMinutes(4.11), MusicFile= new FileStream("C:\\Users\\zemzh\\Source\\Repos\\L-P\\L&P\\Source\\Musics\\Eminem_-_Mockingbird_47829435.mp3", FileMode.Open), MusicImage = new BitmapImage(new Uri("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Musics\\Eminem.jpg"))},
+                new Music{SongName = "Somebody That I Used To Know", SongerName = "Gotye", Album = "NRJ Hits 17", Date = 2012, Durations = TimeSpan.FromMinutes(4.04), MusicFile= new FileStream("C:\\Users\\zemzh\\Source\\Repos\\L-P\\L&P\\Source\\Musics\\Gotye_-_Somebody_That_I_Used_To_Know_48005012.mp3", FileMode.Open), MusicImage = new BitmapImage(new Uri("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Musics\\Somebody.jfif"))},
+            };
             Podcasts = new ObservableCollection<Podcast>()
             {
-                new Podcast{PodcastName = "Danza Kuduro", PodcasterName = "Don Lore V", Date = 2014, Duration = TimeSpan.FromMinutes(3.19), PodcastFile = new FileStream("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Podcasts\\Don_Omar_-_Danza_Kuduro_28587730.mp3", FileMode.Open)},
+                new Podcast{PodcastName = "Danza Kuduro", PodcasterName = "Don Lore V", Date = 2014, Duration = TimeSpan.FromMinutes(3.19), PodcastFile = new FileStream("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Podcasts\\Don_Omar_-_Danza_Kuduro_28587730.mp3", FileMode.Open), PodcastImage = new BitmapImage(new Uri("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Podcasts\\sss.jpg"))},
             };
             Accords = new ObservableCollection<Accords>()
             {

@@ -25,5 +25,6 @@ namespace L_P.View
         {
             InitializeComponent();
         }
+
     }
 }
