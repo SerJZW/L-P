@@ -28,7 +28,9 @@ namespace L_P
                 new Music{SongName = "Прощание", SongerName = "Три дня дождя", Album = "melancholia", Date = 2023, Durations = TimeSpan.FromMinutes(3.56), MusicFile= new FileStream("C:\\Users\\zemzh\\Source\\Repos\\L-P\\L&P\\Source\\Musics\\Tri_dnya_dozhdya_-_Proshhanie_76864069.mp3", FileMode.Open), MusicImage = new BitmapImage(new Uri("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Musics\\3days.jfif"))},
                 new Music{SongName = "Mockingbird", SongerName = "Eminem", Album = "Curtain Call", Date = 2005, Durations = TimeSpan.FromMinutes(4.11), MusicFile= new FileStream("C:\\Users\\zemzh\\Source\\Repos\\L-P\\L&P\\Source\\Musics\\Eminem_-_Mockingbird_47829435.mp3", FileMode.Open), MusicImage = new BitmapImage(new Uri("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Musics\\Eminem.jpg"))},
                 new Music{SongName = "Somebody That I Used To Know", SongerName = "Gotye", Album = "NRJ Hits 17", Date = 2012, Durations = TimeSpan.FromMinutes(4.04), MusicFile= new FileStream("C:\\Users\\zemzh\\Source\\Repos\\L-P\\L&P\\Source\\Musics\\Gotye_-_Somebody_That_I_Used_To_Know_48005012.mp3", FileMode.Open), MusicImage = new BitmapImage(new Uri("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Musics\\Somebody.jfif"))},
+            
             };
+
             Podcasts = new ObservableCollection<Podcast>()
             {
                 new Podcast{PodcastName = "Danza Kuduro", PodcasterName = "Don Lore V", Date = 2014, Duration = TimeSpan.FromMinutes(3.19), PodcastFile = new FileStream("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Podcasts\\Don_Omar_-_Danza_Kuduro_28587730.mp3", FileMode.Open), PodcastImage = new BitmapImage(new Uri("C:\\Users\\zemzh\\source\\repos\\L&P\\L&P\\Source\\Podcasts\\sss.jpg"))},
