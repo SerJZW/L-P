@@ -22,10 +22,13 @@
                          Text="{Binding SearchViewModel.SearchText, UpdateSourceTrigger=PropertyChanged}"
                          BorderThickness="1"
                          BorderBrush="Black"
+                         FontSize="10pt"
                          Style="{StaticResource TextBoxStyle}">
 
                 </TextBox>
-                <ListView ItemsSource="{Binding Music}" MaxHeight="530" SelectedItem="{Binding AudioPlayer.SelectedAudio}" Style="{StaticResource ListStyle}" Margin="108,0,100,0" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <ListView ItemsSource="{Binding Music}" Width="1250" MaxHeight="530" 
+                          SelectedItem="{Binding AudioPlayer.SelectedAudio}" Style="{StaticResource ListStyle}" Margin="108,0,100,0" 
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="{x:Type ListViewItem}">
                             <Setter Property="Background" Value="White"/>
@@ -57,36 +60,39 @@
                             </Style.Triggers>
                         </Style>
                     </ListView.ItemContainerStyle>
+                    
                     <ListView.View>
-                        <GridView AllowsColumnReorder="False" >
-
-                            <GridViewColumn Header="Композиция" Width="250" HeaderContainerStyle="{StaticResource GridViewColumnStyle}">
+                        <GridView AllowsColumnReorder="False">
+                            <GridViewColumn  Width="500" HeaderContainerStyle="{StaticResource GridViewColumnStyle}">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
                                             <Image Source="{Binding MusicImage}" Margin="6" Width="50" Height="50"/>
-                                            <TextBlock Text="{Binding SongName}" FontSize="15" Margin="5,23,0,0"/>
+                                            <StackPanel Orientation="Vertical">
+                                                <TextBlock Text="{Binding SongName}" FontSize="15" VerticalAlignment="Top" Margin="5,13,0,0"/>
+                                                <TextBlock Text="{Binding SongerName}" FontSize="15" VerticalAlignment="Bottom" Margin="5,5,0,0"/>
+                                            </StackPanel>
                                         </StackPanel>
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
-                            <GridViewColumn Header="Исполнитель"
-                                            Width="250" 
-                                            HeaderContainerStyle="{StaticResource GridViewColumnStyle2}"
-                                            DisplayMemberBinding="{Binding Path = SongerName}"/>
-                            <GridViewColumn Header="Альбом" 
-                                            Width="250" 
-                                            HeaderContainerStyle="{StaticResource GridViewColumnStyle2}" 
-                                            DisplayMemberBinding="{Binding Path = Album}"/>
-                            <GridViewColumn Header="Год"
-                                            Width="250"
-                                            HeaderContainerStyle="{StaticResource GridViewColumnStyle2}"
-                                            DisplayMemberBinding="{Binding Path = Date}"/>
-                            <GridViewColumn Header="Продолжительность"
-                                            Width="250" 
-                                            HeaderContainerStyle="{StaticResource GridViewColumnStyle3}"
-                                            DisplayMemberBinding="{Binding Path = Durations, StringFormat={}{0:mm\\:ss}}"/>
-
+                            <GridViewColumn Width="500" HeaderContainerStyle="{StaticResource GridViewColumnStyle}">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Text="{Binding Album}" FontSize="15" VerticalAlignment="Top" Margin="5,7,0,0"/>
+                                            <TextBlock Text="{Binding Date}" FontSize="15" VerticalAlignment="Bottom" Margin="5,5,0,0"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Width="250" HeaderContainerStyle="{StaticResource GridViewColumnStyle}">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Margin="170,0,0,0" Text="{Binding Path=Durations, StringFormat={}{0:mm\\:ss}}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
                         </GridView>
                     </ListView.View>
                 </ListView>

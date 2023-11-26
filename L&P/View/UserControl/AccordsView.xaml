@@ -23,7 +23,9 @@
                          BorderThickness="1"
                          BorderBrush="Black"
                          Style="{StaticResource TextBoxStyle}"/>
-                <ListView Style="{StaticResource ListStyle}" ItemsSource="{Binding Accords}" MaxHeight="100" SelectedItem="{Binding AudioPlayer.SelectedAccords}" Margin="108,0,100,0">
+                <ListView Style="{StaticResource ListStyle}" ItemsSource="{Binding Accords}" Width="1450" 
+                          MaxHeight="100" SelectedItem="{Binding AudioPlayer.SelectedAccords}" Margin="108,0,100,0"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="{x:Type ListViewItem}">
                             <Setter Property="Background" Value="White"/>
@@ -58,7 +60,7 @@
                     </ListView.ItemContainerStyle>
                     <ListView.View>
                         <GridView AllowsColumnReorder="False">
-                            <GridViewColumn Header="Композиция" Width="1450" DisplayMemberBinding="{Binding AccordName}"  HeaderContainerStyle="{StaticResource GridViewColumnStyle2}"/>
+                            <GridViewColumn Width="1450" DisplayMemberBinding="{Binding AccordName}"  HeaderContainerStyle="{StaticResource GridViewColumnStyle}"/>
                         </GridView>
                     </ListView.View>
                 </ListView>
